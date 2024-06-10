@@ -33,6 +33,23 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.4 Verify the the store logo contains the image', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		// Поиск элемента логотипа по метке 'store logo'
+		const logo = page.getByLabel('store logo');
+
+		// Проверка, что элемент логотипа существует
+		await expect(logo).toBeVisible();
+		
+		// Поиск внутри логотипа элемента img
+		const img = logo.locator('img');
+		
+		// Проверка, что элемент img существует
+		await expect(img).toBeVisible();
+
+	});
+
 
 })
 
