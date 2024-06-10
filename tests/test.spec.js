@@ -9,8 +9,10 @@ test('create user', async ({ request }) => {
         },
         data: {
             "email": "eve.holt@reqres.in",
-            "password": "pistol"
+            "password": "pistol",
         }
+
+
 
     })
 
