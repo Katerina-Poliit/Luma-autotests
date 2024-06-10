@@ -13,10 +13,10 @@ class HomePage {
 		await this.page.goto("/");
 	}
 
-	// async clickNextBtn() {
-	// 	await this.locators.getNextBtn().click();
-	// 	return this;
-	// }
+	async clickLogo() {
+		await this.locators.getLogo().click();
+		return this;
+	}
 
 }
 
