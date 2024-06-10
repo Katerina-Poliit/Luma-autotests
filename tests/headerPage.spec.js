@@ -84,6 +84,13 @@ test.describe('headerPage.spec', () => {
 		await expect(homePage.locators.getSignInlink()).toBeVisible();
 		await expect(homePage.locators.getSignInlink()).toHaveText(SIGN_IN_LINK_TEXT);
 
+	});
+
+	test('ТС 01.1.8 Verify the the "Sign In" link has a cursor pointer', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSignInlink()).toBeVisible();
+		await expect(homePage.locators.getSignInlink()).toHaveCSS('cursor', 'pointer');
 
 	});
 
