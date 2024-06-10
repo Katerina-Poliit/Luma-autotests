@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 
 
@@ -75,6 +75,15 @@ test.describe('headerPage.spec', () => {
 		await expect(storeLogo).toBeVisible();
 		await expect(storeLogo).toHaveCSS('float', LOGO_ALIGNMENT);
 		}
+
+	});
+
+	test('ТС 01.1.7 Verify the the header of the site contains the "Sign In" link', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSignInlink()).toBeVisible();
+		await expect(homePage.locators.getSignInlink()).toHaveText(SIGN_IN_LINK_TEXT);
+
 
 	});
 

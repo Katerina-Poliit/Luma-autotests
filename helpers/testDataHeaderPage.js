@@ -26,3 +26,4 @@ export const MY_ACCOUNT_CREATE_END_POINT = '/customer/account/create/';
 //test data
 
 export const LOGO_ALIGNMENT = 'left';
+export const SIGN_IN_LINK_TEXT = 'Sign In';
