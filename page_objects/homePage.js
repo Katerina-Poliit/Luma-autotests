@@ -7,7 +7,8 @@ class HomePage {
 	locators = {
 		getHeader: () => this.page.getByText('Toggle Nav My Cart My Cart'),
 		getLogo: () => this.page.getByLabel('store logo'),
-		getFooter: () => this.page.getByRole('contentinfo')
+		getFooter: () => this.page.getByRole('contentinfo'),
+		getNoteslink: () => this.page.locator('li').filter({ hasText: 'Notes' })
 	};
 
 	async open() {
