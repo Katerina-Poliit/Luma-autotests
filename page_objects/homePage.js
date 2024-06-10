@@ -8,7 +8,8 @@ class HomePage {
 		getHeader: () => this.page.getByText('Toggle Nav My Cart My Cart'),
 		getLogo: () => this.page.getByLabel('store logo'),
 		getFooter: () => this.page.getByRole('contentinfo'),
-		getNoteslink: () => this.page.locator('li').filter({ hasText: 'Notes' })
+		getNoteslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
+		getSignInlink: () => this.page.getByRole('link', { name: 'Sign In' })
 	};
 
 	async open() {
