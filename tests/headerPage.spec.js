@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL } from "../helpers/testDataHeaderPage";
 
 
 test.describe('headerPage.spec', () => {
@@ -50,6 +50,17 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.5 Verify that the user is redirected to the homepage after clicking on the store logo from another page', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		for (let i = 0; i < LINKS_LIST.length; i++) {
+			let link = LINKS_LIST[i];
+			await page.goto(link);
+			await homePage.clickLogo();
+			await expect(page).toHaveURL(BASE_URL);
+		 }
+
+	});
 
 })
 
