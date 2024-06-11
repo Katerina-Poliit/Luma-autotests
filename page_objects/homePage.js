@@ -3,6 +3,7 @@ import NotesPage from "./notesPage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
+import SearchResultPageWithResults from "./searchResultPageWithResults";
 
 
 class HomePage {
@@ -51,6 +52,11 @@ class HomePage {
 		return new CreateNewCustomerAccountPage(this.page);
 	}
 
+	async fillSearchFieldSmth(value) {
+		await this.locators.getSearchField().fill(value);
+		return this;
+	}
+
 	async fillSearchField() {
 		await this.locators.getSearchField().fill('a');
 		return this;
@@ -64,6 +70,11 @@ class HomePage {
 	async clickSearchField() {
 		await this.locators.getSearchField().click();
 		return this;
+	}
+
+	async clickSearchBtn() {
+		await this.locators.getSearchBtn().click();
+		return new SearchResultPageWithResults(this.page);
 	}
 
 }

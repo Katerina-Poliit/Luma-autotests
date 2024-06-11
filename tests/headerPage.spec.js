@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT, SEARCH_FIELD_PLACEHOLDER_TEXT } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT, SEARCH_FIELD_PLACEHOLDER_TEXT, SEARCH_ITEM, AUTOCOMPLETELIST } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 import SignIn from "../page_objects/SignIn";
 import CreateAccount from "../page_objects/createAccount";
@@ -236,6 +236,30 @@ test.describe('headerPage.spec', () => {
 
 		await expect(homePage.locators.getSearchField()).toBeVisible();
 		await expect(homePage.locators.getSearchField()).toHaveCSS('box-shadow', 'rgb(0, 105, 157) 0px 0px 3px 1px');
+
+	});
+
+	test('ТС 01.1.23 Verify that the automatic search results match the query in the search bar after clicking on the search button (magnifier)', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await homePage.fillSearchFieldSmth(SEARCH_ITEM);
+
+		const searchResultPageWithResults = await homePage.clickSearchBtn();
+
+		// Отримання списку пов'язаних пошукових термінів на сторінці результатів пошуку
+		const alex = await searchResultPageWithResults.locators.getRelatedSearchTerms();
+
+		// Створення об'єкта регулярного виразу для пошуку тексту SEARCH_ITEM
+		const regex = new RegExp(SEARCH_ITEM, 'i');
+
+		// Перевірка, чи міститься хоча б один елемент зі списку автодоповнення текст SEARCH_ITEM за допомогою регулярного виразу
+		const isMatchingItem = AUTOCOMPLETELIST.some(item => regex.test(item));
+
+		 // Перевірка, що знайдено хоча б один елемент, який відповідає тексту пошуку
+		expect(isMatchingItem).toBeTruthy();
+
+		await expect(searchResultPageWithResults.locators.getSearchResult()).toBeVisible();
+		await expect(searchResultPageWithResults.locators.getSearchResult()).toContainText(SEARCH_ITEM);
 
 	});
 
