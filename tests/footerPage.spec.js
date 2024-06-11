@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
-import {NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL} from "../helpers/testDataFooterPage";
+import {NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems} from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
 
 test.describe('footerPage.spec', () => {
@@ -126,6 +126,22 @@ test.describe('footerPage.spec', () => {
 		await homePage.clickPrivacyCookiesLink();
 		const policyPage = new PolicyPage(page)
 		await expect(page).toHaveURL(POLICY_PAGE_URL);
+
+	});
+
+	test('ТС 02.1.17 Verify that navigation menu has 14 (fourteen) elements: Luma Security, Luma Privacy Policy, The Information We Collect, How We Use The Information We Collect, Security, Others With Whom We Share Your Information, Your Choices Regarding Use Of The Information We Collect, Your California Privacy Rights, Cookies, Web Beacons, and How We Use Them, List of cookies we collect, Online Account Registration, Emails, Acceptance, Questions for Luma?.', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickPrivacyCookiesLink();
+
+		const policyPage = new PolicyPage(page);
+
+		const navigationMenu = await policyPage.locators.getNavigationMenu();
+		const menuItems = await navigationMenu.locator('li').allTextContents();
+		expect(menuItems.length).toBe(expectedMenuItems.length);
+		for (const expectedItem of expectedMenuItems) {
+			expect(menuItems).toContain(expectedItem);
+		 }
+
 
 	});
 });
