@@ -250,12 +250,32 @@ test.describe('headerPage.spec', () => {
 		const alex = await searchResultPageWithResults.locators.getRelatedSearchTerms();
 
 		// Створення об'єкта регулярного виразу для пошуку тексту SEARCH_ITEM
-		const regex = new RegExp(SEARCH_ITEM, 'i');
+		const regex = new RegExp(SEARCH_ITEM, 'i'); // Флаг i в регулярному виразі вказує на регістронезалежний пошук
 
 		// Перевірка, чи міститься хоча б один елемент зі списку автодоповнення текст SEARCH_ITEM за допомогою регулярного виразу
 		const isMatchingItem = AUTOCOMPLETELIST.some(item => regex.test(item));
 
 		 // Перевірка, що знайдено хоча б один елемент, який відповідає тексту пошуку
+		expect(isMatchingItem).toBeTruthy();
+
+		await expect(searchResultPageWithResults.locators.getSearchResult()).toBeVisible();
+		await expect(searchResultPageWithResults.locators.getSearchResult()).toContainText(SEARCH_ITEM);
+
+	});
+
+	test('ТС 01.1.24 Verify that the automatic search results match the query in the search bar after pressing Enter in the search field', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await homePage.fillSearchFieldSmth(SEARCH_ITEM);
+
+		const searchResultPageWithResults = await homePage.pressSearchField();
+
+		const alex = await searchResultPageWithResults.locators.getRelatedSearchTerms();
+
+		const regex = new RegExp(SEARCH_ITEM, 'i'); 
+
+		const isMatchingItem = AUTOCOMPLETELIST.some(item => regex.test(item));
+
 		expect(isMatchingItem).toBeTruthy();
 
 		await expect(searchResultPageWithResults.locators.getSearchResult()).toBeVisible();
