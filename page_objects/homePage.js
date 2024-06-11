@@ -36,6 +36,11 @@ class HomePage {
 		return new CreateNewCustomerAccountPage(this.page);
 	}
 
+	async fillSearchField() {
+		await this.locators.getSearchField().fill('a');
+		return this;
+	}
+
 }
 
 export default HomePage;
