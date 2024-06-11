@@ -113,4 +113,10 @@ test.describe('footerPage.spec', () => {
 		await expect(homePage.locators.getPrivacyCookiesLink()).toBeVisible();
 
 	});
+
+	test('ТС 02.1.15 Verify that the "Privacy and Cookie Policy" link contains the pointer cursor', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getPrivacyCookiesLink()).toHaveCSS('cursor', 'pointer');
+
+	});
 });
