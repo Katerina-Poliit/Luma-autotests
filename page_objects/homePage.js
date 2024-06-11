@@ -34,6 +34,7 @@ class HomePage {
 		getSubscribeLink: () => this.page.getByRole('link', { name: 'Subscribe' }),
 		getPrivacyCookiesLink: () => this.page.getByRole('link', { name: 'Privacy and Cookie Policy' }),
 		getSearchTermsLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
+		
 
 
 	};
