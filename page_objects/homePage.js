@@ -3,6 +3,7 @@ import NotesPage from "./notesPage";
 import ParticeAPIPage from "./particeApi.Page";
 import WriteForUsPage from "./writeForUsPage";
 import SubscribePage from "./SubscribePage";
+import PolicyPage from "./policyPage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -104,6 +105,10 @@ class HomePage {
 		return new SubscribePage(this.page);
 	}
 
+	async clickPrivacyCookiesLink() {
+		await this.locators.getPrivacyCookiesLink().click();
+		return new PolicyPage(this.page);
+	}
 }
 
 export default HomePage;
