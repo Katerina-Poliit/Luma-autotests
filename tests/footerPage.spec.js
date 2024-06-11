@@ -90,4 +90,10 @@ test.describe('footerPage.spec', () => {
 		await expect(homePage.locators.getSubscribeLink()).toBeVisible();
 
 	});
+
+	test('ТС 02.1.12 Verify that the "Subscribe" link contains the pointer cursor', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getSubscribeLink()).toHaveCSS('cursor', 'pointer');
+
+	});
 });
