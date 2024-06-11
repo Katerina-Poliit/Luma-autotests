@@ -183,6 +183,12 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.20 Verify that the "Search Terms" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getSearchTermsLink()).toBeVisible();
+
+	});
+
 
 	})
 
