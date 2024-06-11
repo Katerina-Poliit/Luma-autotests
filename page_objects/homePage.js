@@ -1,6 +1,7 @@
 
 import NotesPage from "./notesPage";
 import ParticeAPIPage from "./particeApi.Page";
+import WriteForUsPage from "./writeForUsPage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -88,6 +89,11 @@ class HomePage {
 	async clickPacticeAPILink() {
 		await this.locators.getPacticeAPI().click();
 		return new ParticeAPIPage(this.page);
+	}
+
+	async clickForUsLink() {
+		await this.locators.getForUsLink().click();
+		return new WriteForUsPage(this.page);
 	}
 
 }
