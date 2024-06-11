@@ -18,7 +18,7 @@ class HomePage {
 		getNoteslink: () => this.page.getByRole('link', { name: 'Notes' }),
 
 		// getFooter: () => this.page.getByRole('contentinfo'),
-		getNoteslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
+		getNotesslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
 		getSignInlink: () => this.page.getByRole('link', { name: 'Sign In' }),
 		getCreateAnAccountlink: () => this.page.getByRole('banner').getByRole('link', { name: 'Create an Account' }),
 		getSearchField: () => this.page.getByPlaceholder('Search entire store here...'),
