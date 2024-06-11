@@ -129,5 +129,13 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.12 Verify the the "Create an Account" link has a cursor pointer', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getCreateAnAccountlink()).toBeVisible();
+		await expect(homePage.locators.getCreateAnAccountlink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 })
 
