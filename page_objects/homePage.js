@@ -1,5 +1,9 @@
+
+import NotesPage from "./notesPage";
+
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
+
 
 class HomePage {
 	constructor(page) {
@@ -9,12 +13,17 @@ class HomePage {
 	locators = {
 		getHeader: () => this.page.getByText('Toggle Nav My Cart My Cart'),
 		getLogo: () => this.page.getByLabel('store logo'),
-		getFooter: () => this.page.getByRole('contentinfo'),
-		getNoteslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
+
+		getFooter: () => this.page.locator('.page-wrapper footer'),
+		getNoteslink: () => this.page.getByRole('link', { name: 'Notes' }),
+
+		// getFooter: () => this.page.getByRole('contentinfo'),
+		getNotesslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
 		getSignInlink: () => this.page.getByRole('link', { name: 'Sign In' }),
 		getCreateAnAccountlink: () => this.page.getByRole('banner').getByRole('link', { name: 'Create an Account' }),
 		getSearchField: () => this.page.getByPlaceholder('Search entire store here...'),
 		getSearchBtn: () => this.page.locator("button[title='Search']")
+
 	};
 
 	async open() {
@@ -26,6 +35,12 @@ class HomePage {
 		return this;
 	}
 
+
+	async clickNoteslink() {
+		await this.locators.getNoteslink().click();
+		return new NotesPage(this.page);
+	}
+
 	async clickSignInlink() {
 		await this.locators.getSignInlink().click();
 		return new CustomerLoginPage(this.page);
@@ -35,6 +50,7 @@ class HomePage {
 		await this.locators.getCreateAnAccountlink().click();
 		return new CreateNewCustomerAccountPage(this.page);
 	}
+
 
 }
 
