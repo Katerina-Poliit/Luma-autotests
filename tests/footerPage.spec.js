@@ -145,12 +145,12 @@ test.describe('footerPage.spec', () => {
 
 	});
 
-	test('ТС 02.1.18 Verify that clicking each navigation menu link opens a new page', async ({ page, context }) => {
+	test('ТС 02.1.17.1 Verify that clicking each navigation menu link opens a new page', async ({ page, context }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickPrivacyCookiesLink();
 
 		const policyPage = new PolicyPage(page);
-		const list = await policyPage.locators.getNavigationMenu(); 
+		const list = await policyPage.locators.getNavigationMenu();
 		const items = await list.locator('li').all();
 		for (const item of items) {
 		  const menuItemText = await item.innerText();
