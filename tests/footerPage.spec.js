@@ -161,6 +161,20 @@ test.describe('footerPage.spec', () => {
 		  }
 		}
 	  });
+
+	  test('ТС 02.1.18  Verify that the  elements contain a pointer cursor', async ({ page, context }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickPrivacyCookiesLink();
+
+		const policyPage = new PolicyPage(page);
+		const list = await policyPage.locators.getNavigationMenu();
+		const items = await list.locator('li').all();
+		for (const item of items) {
+			await expect(item).toHaveCSS('cursor', 'auto');
+		  }
+	  });
+
+
 	})
 
 
