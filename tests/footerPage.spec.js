@@ -38,5 +38,11 @@ test.describe('footerPage.spec', () => {
 
         await expect(notesPage).toHaveURL(NOTES_PAGE_URL);
 
-    })
+    });
+
+	test('ТС 02.1.5 Verify that the "Practice API Testing using Magento 2" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getPacticeAPI()).toBeVisible();
+
+	});
 });
