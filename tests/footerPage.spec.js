@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
-import {NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT} from "../helpers/testDataFooterPage";
+import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT } from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
 import SearchtermsPage from "../page_objects/searchTermsPage";
 
@@ -18,29 +18,29 @@ test.describe('footerPage.spec', () => {
 
 	});
 
-    test('ТС 02.1.2 Verify that the "Notes" link is placed in the footer', async ({ page }) => {
+	test('ТС 02.1.2 Verify that the "Notes" link is placed in the footer', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getNoteslink()).toBeVisible();
-        await expect(homePage.locators.getNoteslink()).toHaveText(NOTES_LINK_TEXT);
+		await expect(homePage.locators.getNoteslink()).toHaveText(NOTES_LINK_TEXT);
 
 	});
 
-    test('ТС 02.1.3 Verify that the "Notes" link contains the pointer cursor', async ({ page }) => {
+	test('ТС 02.1.3 Verify that the "Notes" link contains the pointer cursor', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getNoteslink()).toHaveCSS('cursor', 'pointer');
 
 	});
 
-    test('ТС 02.1.4 Verify that the "Notes" link leads to the correct page.', async ({ page }) => {
+	test('ТС 02.1.4 Verify that the "Notes" link leads to the correct page.', async ({ page }) => {
 		const homePage = new HomePage(page);
 
 		const pagePromise = page.waitForEvent('popup');
-        await homePage.clickNoteslink();
-        const notesPage = await pagePromise;
+		await homePage.clickNoteslink();
+		const notesPage = await pagePromise;
 
-        await expect(notesPage).toHaveURL(NOTES_PAGE_URL);
+		await expect(notesPage).toHaveURL(NOTES_PAGE_URL);
 
-    });
+	});
 
 	test('ТС 02.1.5 Verify that the "Practice API Testing using Magento 2" link is placed in the footer', async ({ page }) => {
 		const homePage = new HomePage(page);
@@ -57,10 +57,10 @@ test.describe('footerPage.spec', () => {
 	test('ТС 02.1.7 Verify that the "Practice API Testing using Magento 2" link leads to the correct page.', async ({ page }) => {
 		const homePage = new HomePage(page);
 		const pagePromise = page.waitForEvent('popup');
-        await homePage.clickPacticeAPILink();
-        const notesPage = await pagePromise;
+		await homePage.clickPacticeAPILink();
+		const notesPage = await pagePromise;
 
-        await expect(notesPage).toHaveURL(PARTICEAPI_PAGE_URL);
+		await expect(notesPage).toHaveURL(PARTICEAPI_PAGE_URL);
 
 	});
 
@@ -80,10 +80,10 @@ test.describe('footerPage.spec', () => {
 		const homePage = new HomePage(page);
 
 		const pagePromise = page.waitForEvent('popup');
-        await homePage.clickForUsLink();
-        const notesPage = await pagePromise;
+		await homePage.clickForUsLink();
+		const notesPage = await pagePromise;
 
-        await expect(notesPage).toHaveURL(FOR_US_LINK_URL);
+		await expect(notesPage).toHaveURL(FOR_US_LINK_URL);
 
 	});
 
@@ -103,10 +103,10 @@ test.describe('footerPage.spec', () => {
 		const homePage = new HomePage(page);
 
 		const pagePromise = page.waitForEvent('popup');
-        await homePage.clickSubscribeLink();
-        const notesPage = await pagePromise;
+		await homePage.clickSubscribeLink();
+		const notesPage = await pagePromise;
 
-        await expect(notesPage).toHaveURL(SUBSCRIBE_LINK_URL);
+		await expect(notesPage).toHaveURL(SUBSCRIBE_LINK_URL);
 
 	});
 
@@ -141,7 +141,7 @@ test.describe('footerPage.spec', () => {
 		expect(menuItems.length).toBe(expectedMenuItems.length);
 		for (const expectedItem of expectedMenuItems) {
 			expect(menuItems).toContain(expectedItem);
-		 }
+		}
 
 
 	});
@@ -154,16 +154,16 @@ test.describe('footerPage.spec', () => {
 		const list = await policyPage.locators.getNavigationMenu();
 		const items = await list.locator('li').all();
 		for (const item of items) {
-		  const menuItemText = await item.innerText();
-		  if (expectedMenuItems.includes(menuItemText)) {
-			await item.click();
-			await homePage.open();
-			await homePage.clickPrivacyCookiesLink();
-		  }
+			const menuItemText = await item.innerText();
+			if (expectedMenuItems.includes(menuItemText)) {
+				await item.click();
+				await homePage.open();
+				await homePage.clickPrivacyCookiesLink();
+			}
 		}
-	  });
+	});
 
-	  test('ТС 02.1.18  Verify that the  elements contain a pointer cursor', async ({ page, context }) => {
+	test('ТС 02.1.18  Verify that the  elements contain a pointer cursor', async ({ page, context }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickPrivacyCookiesLink();
 
@@ -172,11 +172,11 @@ test.describe('footerPage.spec', () => {
 		const items = await list.locator('li').all();
 		for (const item of items) {
 			await expect(item).toHaveCSS('cursor', 'auto');
-		  }
-	  });
+		}
+	});
 
 
-	  test('ТС 02.1.19 navigation menu on the left is gray', async ({ page }) => {
+	test('ТС 02.1.19 navigation menu on the left is gray', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickPrivacyCookiesLink();
 		const policyPage = new PolicyPage(page)
@@ -213,9 +213,27 @@ test.describe('footerPage.spec', () => {
 		await expect(searchTerms.locators.getSearchTermsHeading()).toHaveText(SEARCH_TERMS_PAGE_HEANDING_TEXT);
 		await expect(searchTerms.locators.getSearchTerms()).toBeVisible();
 	});
+	test('ТС 02.1.24 Verify that all tags on the "Popular Search Terms" page lead to other pages', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickSearchTermsLink();
+		const searchTerms = new SearchtermsPage(page);
+		const tags = await searchTerms.locators.getSearchTerms();
+		const tagsCount = await tags.count();
 
 
-	})
+		for (let i = 0; i < tagsCount; i++) {
+			await tags.nth(i).click();
+			const currentURL = page.url();
+
+			await expect(currentURL).not.toBe(SEARCH_TERM_LINK_URL);
+
+			await page.goBack();
+		}
+	});
+
+
+
+})
 
 
 
