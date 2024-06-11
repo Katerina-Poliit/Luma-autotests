@@ -179,5 +179,12 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('Verify the the search field contains the the search button (magnifier)', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSearchBtn()).toBeVisible();
+		// await expect(homePage.locators.getSearchBtn()).toHaveAttribute('disabled');
+	});
+
 })
 
