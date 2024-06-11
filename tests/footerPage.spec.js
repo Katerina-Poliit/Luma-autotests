@@ -25,7 +25,7 @@ test.describe('footerPage.spec', () => {
 
     test('ТС 02.1.3 Verify that the "Notes" link contains the pointer cursor', async ({ page }) => {
 		const homePage = new HomePage(page);
-		await expect(homePage.locators.getNoteslink()).toHaveCSS('cursor', 'auto');
+		await expect(homePage.locators.getNoteslink()).toHaveCSS('cursor', 'pointer');
 
 	});
 
