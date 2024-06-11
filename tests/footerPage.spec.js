@@ -84,4 +84,10 @@ test.describe('footerPage.spec', () => {
         await expect(notesPage).toHaveURL(FOR_US_LINK_URL);
 
 	});
+
+	test('ТС 02.1.11 Verify that the "Subscribe" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getSubscribeLink()).toBeVisible();
+
+	});
 });
