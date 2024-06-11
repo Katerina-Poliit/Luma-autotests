@@ -179,11 +179,18 @@ test.describe('headerPage.spec', () => {
 
 	});
 
-	test('Verify the the search field contains the the search button (magnifier)', async ({ page }) => {
+	test('ТС 01.1.17 Verify the search field contains the search button (magnifier)', async ({ page }) => {
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getSearchBtn()).toBeVisible();
-		// await expect(homePage.locators.getSearchBtn()).toHaveAttribute('disabled');
+
+	});
+
+	test('ТС 01.1.18 Verify that the search button (magnifier) is inactive by default', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSearchBtn()).toBeVisible();
+		await expect(homePage.locators.getSearchBtn()).toHaveAttribute('disabled');
 	});
 
 })
