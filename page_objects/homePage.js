@@ -77,6 +77,11 @@ class HomePage {
 		return new SearchResultPageWithResults(this.page);
 	}
 
+	async pressSearchField() {
+		await this.locators.getSearchField().press('Enter');
+		return new SearchResultPageWithResults(this.page);
+	}
+
 }
 
 export default HomePage;
