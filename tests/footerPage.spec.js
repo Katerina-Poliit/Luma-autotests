@@ -67,4 +67,10 @@ test.describe('footerPage.spec', () => {
 		await expect(homePage.locators.getForUsLink()).toBeVisible();
 
 	});
+
+	test('ТС 02.1.9 Verify that the "Write for us" link contains the pointer cursor', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getForUsLink()).toHaveCSS('cursor', 'pointer');
+
+	});
 });
