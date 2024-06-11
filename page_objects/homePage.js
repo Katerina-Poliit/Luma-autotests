@@ -32,7 +32,8 @@ class HomePage {
 		getForUsLink: () => this.page.getByRole('link', { name: 'Write for us' }),
 		getSubscribeLink: () => this.page.getByRole('link', { name: 'Subscribe' }),
 		getPrivacyCookiesLink: () => this.page.getByRole('link', { name: 'Privacy and Cookie Policy' }),
-		
+		getSearchTermsLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
+
 
 	};
 
