@@ -175,6 +175,15 @@ test.describe('footerPage.spec', () => {
 	  });
 
 
+	  test('ТС 02.1.19 navigation menu on the left is gray', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickPrivacyCookiesLink();
+		const policyPage = new PolicyPage(page)
+		await expect(policyPage.locators.getNavigationMenu()).toHaveCSS('background', 'rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box');
+
+	});
+
+
 	})
 
 
