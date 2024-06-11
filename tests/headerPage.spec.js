@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 
 
@@ -91,6 +91,19 @@ test.describe('headerPage.spec', () => {
 
 		await expect(homePage.locators.getSignInlink()).toBeVisible();
 		await expect(homePage.locators.getSignInlink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 01.1.9 Verify that the user is redirected to the "Customer Login" page after clicking on the "Sign In" link', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(page).toHaveURL(BASE_URL);
+
+		const customerLoginPage = await homePage.clickSignInlink();
+
+		await expect(page).toHaveURL(CUSTOMER_LOGIN_PAGE_URL);
+		await expect(customerLoginPage.locators.getHeader()).toBeVisible();
+		await expect(customerLoginPage.locators.getHeader()).toHaveText(CUSTOMER_LOGIN_PAGE_HEADER_TEXT);
 
 	});
 

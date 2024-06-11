@@ -1,3 +1,4 @@
+import CustomerLoginPage from "./customerLoginPege";
 
 class HomePage {
 	constructor(page) {
@@ -19,6 +20,11 @@ class HomePage {
 	async clickLogo() {
 		await this.locators.getLogo().click();
 		return this;
+	}
+
+	async clickSignInlink() {
+		await this.locators.getSignInlink().click();
+		return new CustomerLoginPage(this.page);
 	}
 
 }
