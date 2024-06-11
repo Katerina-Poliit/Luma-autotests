@@ -45,4 +45,10 @@ test.describe('footerPage.spec', () => {
 		await expect(homePage.locators.getPacticeAPI()).toBeVisible();
 
 	});
+
+	test('ТС 02.1.6 Verify that the "Practice API Testing using Magento 2" link contains the pointer cursor', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getPacticeAPI()).toHaveCSS('cursor', 'pointer');
+
+	});
 });
