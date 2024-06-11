@@ -189,6 +189,13 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.23 Verify that the search-terms contains the pointer cursor', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getSearchTermsLink()).toBeVisible();
+		await expect(homePage.locators.getSearchTermsLink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 
 	})
 
