@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
 import {NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems} from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
+import SearchtermsPage from "../page_objects/searchTermsPage";
 
 test.describe('footerPage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -193,6 +194,13 @@ test.describe('footerPage.spec', () => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getSearchTermsLink()).toBeVisible();
 		await expect(homePage.locators.getSearchTermsLink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 02.1.21 Verify that the "Search Terms" link opens the page, the user clicked on the "Search Terms" link', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickSearchTermsLink();
+		const searchTerms = new SearchtermsPage(page);
 
 	});
 

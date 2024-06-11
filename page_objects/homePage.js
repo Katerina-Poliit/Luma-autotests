@@ -4,6 +4,7 @@ import ParticeAPIPage from "./particeApi.Page";
 import WriteForUsPage from "./writeForUsPage";
 import SubscribePage from "./SubscribePage";
 import PolicyPage from "./policyPage";
+import SearchtermsPage from "./searchTermsPage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -110,6 +111,11 @@ class HomePage {
 	async clickPrivacyCookiesLink() {
 		await this.locators.getPrivacyCookiesLink().click();
 		return new PolicyPage(this.page);
+	}
+
+	async clickSearchTermsLink() {
+		await this.locators.getSearchTermsLink().click();
+		return new SearchtermsPage(this.page);
 	}
 }
 
