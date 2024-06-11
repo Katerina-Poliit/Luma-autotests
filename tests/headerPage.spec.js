@@ -3,6 +3,7 @@ import HomePage from "../page_objects/homePage";
 import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 import SignIn from "../page_objects/SignIn";
+import CreateAccount from "../page_objects/createAccount";
 
 
 test.describe('headerPage.spec', () => {
@@ -147,6 +148,19 @@ test.describe('headerPage.spec', () => {
 		await expect(page).toHaveURL(CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL);
 		await expect(createNewCustomerAccountPage.locators.getHeader()).toBeVisible();
 		await expect(createNewCustomerAccountPage.locators.getHeader()).toHaveText(CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT);
+
+	});
+
+	test('ТС 01.1.14 Verify that the "Create an Account" link is located on every page of the website', async ({ page }) => {
+
+		const createAccount = new CreateAccount(page);
+		const allLinksWithCreateAccount = NAVBAR_URLs_END_POINTS_FULL;
+
+		for(let link of allLinksWithCreateAccount){
+		const allLinksWithCreateAccountLink = await createAccount.locators.getCreateAccount(link);
+
+		await expect(allLinksWithCreateAccountLink).toBeVisible();
+		}
 
 	});
 
