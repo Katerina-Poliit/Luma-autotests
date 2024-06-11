@@ -13,7 +13,8 @@ class HomePage {
 		getNoteslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
 		getSignInlink: () => this.page.getByRole('link', { name: 'Sign In' }),
 		getCreateAnAccountlink: () => this.page.getByRole('banner').getByRole('link', { name: 'Create an Account' }),
-		getSearchField: () => this.page.getByPlaceholder('Search entire store here...')
+		getSearchField: () => this.page.getByPlaceholder('Search entire store here...'),
+		getSearchBtn: () => this.page.locator("button[title='Search']")
 	};
 
 	async open() {
