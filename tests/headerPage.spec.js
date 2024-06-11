@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL} from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
+import SignIn from "../page_objects/SignIn";
 
 
 test.describe('headerPage.spec', () => {
@@ -104,6 +105,20 @@ test.describe('headerPage.spec', () => {
 		await expect(page).toHaveURL(CUSTOMER_LOGIN_PAGE_URL);
 		await expect(customerLoginPage.locators.getHeader()).toBeVisible();
 		await expect(customerLoginPage.locators.getHeader()).toHaveText(CUSTOMER_LOGIN_PAGE_HEADER_TEXT);
+
+	});
+
+	test('ТС 01.1.10 Verify that "Sign In" link is located on every page of the website', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		const signIn = new SignIn(page);
+		const allLinksWithSignIn = NAVBAR_URLs_END_POINTS_FULL;
+
+		for(let link of allLinksWithSignIn){
+		const signInLink = await signIn.locators.getSignIn(link);
+
+		await expect(signInLink).toBeVisible();
+		}
 
 	});
 

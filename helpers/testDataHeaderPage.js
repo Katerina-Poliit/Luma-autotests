@@ -22,6 +22,16 @@ export const NAVBAR_URLs_END_POINTS = [
 	'/sale.html'
  ];
 
+ export const NAVBAR_URLs_END_POINTS_FULL = [
+	'/what-is-new.html',
+	'/women.html',
+	'/men.html',
+	'/gear.html',
+	'/training.html',
+	'/sale.html',
+	'/customer/account/create/'
+ ];
+
 export const MY_ACCOUNT_CREATE_END_POINT = '/customer/account/create/';
 
 
