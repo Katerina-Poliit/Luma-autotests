@@ -107,4 +107,10 @@ test.describe('footerPage.spec', () => {
         await expect(notesPage).toHaveURL(SUBSCRIBE_LINK_URL);
 
 	});
+
+	test('ТС 02.1.14 Verify that the "Privacy and Cookie Policy" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getPrivacyCookiesLink()).toBeVisible();
+
+	});
 });
