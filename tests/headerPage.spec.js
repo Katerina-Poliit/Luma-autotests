@@ -214,5 +214,18 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.21 Verify the search button (magnifier) is inactive after the search field is cleared', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await homePage.fillSearchField();
+
+		await expect(homePage.locators.getSearchBtn()).not.toHaveAttribute("disabled");
+
+		await homePage.cleanSearchField();
+
+		await expect(homePage.locators.getSearchBtn()).toHaveAttribute("disabled");
+
+	});
+
 })
 

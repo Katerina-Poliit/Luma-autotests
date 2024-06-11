@@ -56,6 +56,11 @@ class HomePage {
 		return this;
 	}
 
+	async cleanSearchField() {
+		await this.locators.getSearchField().fill('');
+		return this;
+	}
+
 }
 
 export default HomePage;
