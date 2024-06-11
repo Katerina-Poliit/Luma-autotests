@@ -2,6 +2,7 @@
 import NotesPage from "./notesPage";
 import ParticeAPIPage from "./particeApi.Page";
 import WriteForUsPage from "./writeForUsPage";
+import SubscribePage from "./SubscribePage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -95,6 +96,11 @@ class HomePage {
 	async clickForUsLink() {
 		await this.locators.getForUsLink().click();
 		return new WriteForUsPage(this.page);
+	}
+
+	async clickSubscribeLink() {
+		await this.locators.getSubscribeLink().click();
+		return new SubscribePage(this.page);
 	}
 
 }
