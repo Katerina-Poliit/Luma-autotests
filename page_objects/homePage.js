@@ -29,7 +29,8 @@ class HomePage {
 		getSearchBtn: () => this.page.locator("button[title='Search']"),
 		getPacticeAPI: () => this.page.getByRole('link', { name: 'Practice API Testing using Magento' }),
 		getForUsLink: () => this.page.getByRole('link', { name: 'Write for us' }),
-		getSubscribeLink: () => this.page.getByRole('link', { name: 'Subscribe' })
+		getSubscribeLink: () => this.page.getByRole('link', { name: 'Subscribe' }),
+		getPrivacyCookiesLink: () => this.page.getByRole('link', { name: 'Privacy and Cookie Policy' })
 
 	};
 
