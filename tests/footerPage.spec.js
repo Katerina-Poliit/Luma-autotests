@@ -61,4 +61,10 @@ test.describe('footerPage.spec', () => {
         await expect(notesPage).toHaveURL(PARTICEAPI_PAGE_URL);
 
 	});
+
+	test('ТС 02.1.8 Verify that the "Write for us" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getForUsLink()).toBeVisible();
+
+	});
 });
