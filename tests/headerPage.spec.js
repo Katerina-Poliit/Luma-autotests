@@ -164,5 +164,12 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.15 Verify the the header of the site contains the search field', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSearchField()).toBeVisible();
+
+	});
+
 })
 
