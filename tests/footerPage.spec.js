@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
-import {NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL} from "../helpers/testDataFooterPage";
+import {NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL} from "../helpers/testDataFooterPage";
 
 test.describe('footerPage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -71,6 +71,17 @@ test.describe('footerPage.spec', () => {
 	test('ТС 02.1.9 Verify that the "Write for us" link contains the pointer cursor', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getForUsLink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 02.1.10 Verify that the "Write for us" link leads to the correct page.', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		const pagePromise = page.waitForEvent('popup');
+        await homePage.clickForUsLink();
+        const notesPage = await pagePromise;
+
+        await expect(notesPage).toHaveURL(FOR_US_LINK_URL);
 
 	});
 });
