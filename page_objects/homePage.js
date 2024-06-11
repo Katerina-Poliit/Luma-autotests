@@ -23,7 +23,8 @@ class HomePage {
 		getSignInlink: () => this.page.getByRole('link', { name: 'Sign In' }),
 		getCreateAnAccountlink: () => this.page.getByRole('banner').getByRole('link', { name: 'Create an Account' }),
 		getSearchField: () => this.page.getByPlaceholder('Search entire store here...'),
-		getSearchBtn: () => this.page.locator("button[title='Search']")
+		getSearchBtn: () => this.page.locator("button[title='Search']"),
+		getPacticeAPI: () => this.page.getByRole('link', { name: 'Practice API Testing using Magento' }),
 
 	};
 
