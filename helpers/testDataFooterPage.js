@@ -1,6 +1,6 @@
 // url
 
-
+export const POLICY_PAGE_URL = 'https://magento.softwaretestingboard.com/privacy-policy-cookie-restriction-mode';
 
 
 //test data
