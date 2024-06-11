@@ -1,5 +1,6 @@
 
 import NotesPage from "./notesPage";
+import ParticeAPIPage from "./particeApi.Page";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -81,6 +82,11 @@ class HomePage {
 	async pressSearchField() {
 		await this.locators.getSearchField().press('Enter');
 		return new SearchResultPageWithResults(this.page);
+	}
+
+	async clickPacticeAPILink() {
+		await this.locators.getPacticeAPI().click();
+		return new ParticeAPIPage(this.page);
 	}
 
 }
