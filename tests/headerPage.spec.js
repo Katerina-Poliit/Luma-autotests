@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT, SEARCH_FIELD_PLACEHOLDER_TEXT } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 import SignIn from "../page_objects/SignIn";
 import CreateAccount from "../page_objects/createAccount";
@@ -168,6 +168,14 @@ test.describe('headerPage.spec', () => {
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getSearchField()).toBeVisible();
+
+	});
+
+	test('ТС 01.1.16 Verify the the search field contains the "Search entire store here..." placeholder', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSearchField()).toBeVisible();
+		await expect(homePage.locators.getSearchField()).toHaveAttribute('placeholder', SEARCH_FIELD_PLACEHOLDER_TEXT)
 
 	});
 
