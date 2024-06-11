@@ -61,6 +61,11 @@ class HomePage {
 		return this;
 	}
 
+	async clickSearchField() {
+		await this.locators.getSearchField().click();
+		return this;
+	}
+
 }
 
 export default HomePage;
