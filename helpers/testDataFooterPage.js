@@ -1,6 +1,7 @@
 // url
 
 export const POLICY_PAGE_URL = 'https://magento.softwaretestingboard.com/privacy-policy-cookie-restriction-mode';
+export const SEARCH_TERM_LINK_URL = 'https://magento.softwaretestingboard.com/search/term/popular/'
 
 
 //test data
@@ -29,6 +30,7 @@ export const SUBSCRIBE_LINK_URL = 'https://softwaretestingboard.com/subscribe/?u
     'Questions for Luma?'
   ];
 
+  export const SEARCH_TERMS_PAGE_HEANDING_TEXT = 'Popular Search Terms'
 //test data
 
 // export cons
