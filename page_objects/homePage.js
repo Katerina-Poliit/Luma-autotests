@@ -1,3 +1,4 @@
+import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
 
 class HomePage {
@@ -26,6 +27,11 @@ class HomePage {
 	async clickSignInlink() {
 		await this.locators.getSignInlink().click();
 		return new CustomerLoginPage(this.page);
+	}
+
+	async clickCreateAnAccountlink() {
+		await this.locators.getCreateAnAccountlink().click();
+		return new CreateNewCustomerAccountPage(this.page);
 	}
 
 }

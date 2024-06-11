@@ -2,7 +2,7 @@
 
 export const BASE_URL = 'https://magento.softwaretestingboard.com';
 export const CUSTOMER_LOGIN_PAGE_URL = 'https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/';
-
+export const CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL = 'https://magento.softwaretestingboard.com/customer/account/create/';
 export const LINKS_LIST = [
 	"https://magento.softwaretestingboard.com/what-is-new.html",
 	"https://magento.softwaretestingboard.com/women.html",
@@ -41,3 +41,4 @@ export const LOGO_ALIGNMENT = 'left';
 export const SIGN_IN_LINK_TEXT = 'Sign In';
 export const CUSTOMER_LOGIN_PAGE_HEADER_TEXT = 'Customer Login';
 export const CREATE_AN_ACCOUNT_LINK_TEXT = 'Create an Account';
+export const CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT = 'Create New Customer Account';

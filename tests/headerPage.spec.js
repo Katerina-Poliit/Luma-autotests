@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT} from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 import SignIn from "../page_objects/SignIn";
 
@@ -134,6 +134,19 @@ test.describe('headerPage.spec', () => {
 
 		await expect(homePage.locators.getCreateAnAccountlink()).toBeVisible();
 		await expect(homePage.locators.getCreateAnAccountlink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 01.1.13 Verify that the user is redirected to the "Create New Customer Account" page after clicking on the "Create an Account" link', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+		await expect(page).toHaveURL(BASE_URL);
+
+		const createNewCustomerAccountPage = await homePage.clickCreateAnAccountlink();
+
+		await expect(page).toHaveURL(CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL);
+		await expect(createNewCustomerAccountPage.locators.getHeader()).toBeVisible();
+		await expect(createNewCustomerAccountPage.locators.getHeader()).toHaveText(CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT);
 
 	});
 
