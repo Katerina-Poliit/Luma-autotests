@@ -31,7 +31,8 @@ export const SUBSCRIBE_LINK_URL = 'https://softwaretestingboard.com/subscribe/?u
     'Questions for Luma?'
   ];
 
-  export const SEARCH_TERMS_PAGE_HEANDING_TEXT = 'Popular Search Terms'
+  export const SEARCH_TERMS_PAGE_HEANDING_TEXT = 'Popular Search Terms';
+  export const SEARCH_BTN_TEXT = 'Search';
 //test data
 
 // export cons
