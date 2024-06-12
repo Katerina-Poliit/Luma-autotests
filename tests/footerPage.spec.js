@@ -276,6 +276,13 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.30 Verify that the "Advanced Search" page contains the "Description" field', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await expect(advancedSearchPage.locators.getDescriptionField()).toBeVisible();
+	});
+
 
 
 })
