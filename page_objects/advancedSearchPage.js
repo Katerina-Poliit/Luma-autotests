@@ -13,7 +13,8 @@ class AndvancedSearchPage {
         getDescriptionField: () => this.page.getByLabel('Description', { exact: true }),
         getShortDescriptionField: () => this.page.getByLabel('Short Description'),
         getPriceField: () => this.page.getByLabel('Price'),
-        getUSDField: () => this.page.getByLabel('USD')
+        getUSDField: () => this.page.getByLabel('USD'),
+        getSearchBtn: () => this.page.locator('#form-validate').getByRole('button', { name: 'Search' })
 
     }
 }
