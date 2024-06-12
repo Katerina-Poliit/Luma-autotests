@@ -231,6 +231,12 @@ test.describe('footerPage.spec', () => {
 		}
 	});
 
+	test('ТС 02.1.25 Verify that the "Advanced Search" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getAdvancedSearchLink()).toBeVisible();
+
+	});
+
 
 
 })
