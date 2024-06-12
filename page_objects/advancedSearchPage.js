@@ -25,6 +25,11 @@ class AndvancedSearchPage {
 		return this;
 	}
 
+    async fillnotValidSKUField() {
+		await this.locators. getSKUField().fill('WJ125');
+		return this;
+	}
+
     async clickSearchBtn() {
 		await this.locators.getSearchBtn().click();
 		return new ResultSearchPage(this.page);

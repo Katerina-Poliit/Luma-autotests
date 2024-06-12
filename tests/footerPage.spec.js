@@ -339,6 +339,18 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.42  Verify that the transition to the results page is successful, at least one field is filled with invalid data, a warning message has been received', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await advancedSearchPage.fillnotValidSKUField();
+		await advancedSearchPage.clickSearchBtn();
+		const resultSearchPage = new ResultSearchPage(page);
+		await expect(resultSearchPage.locators.getNotValidMessage()).toBeVisible();
+
+	});
+
+
 
 
 

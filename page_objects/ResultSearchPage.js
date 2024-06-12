@@ -5,7 +5,8 @@ class ResultSearchPage {
 
 
     locators = {
-        getValidMessage: () => this.page.getByText('1 item were found using the')
+        getValidMessage: () => this.page.getByText('1 item were found using the'),
+        getNotValidMessage: () => this.page.getByText('We can\'t find any items')
     }
 }
 
