@@ -5,6 +5,7 @@ import PolicyPage from "../page_objects/policyPage";
 import SearchtermsPage from "../page_objects/searchTermsPage";
 import AndvancedSearchPage from "../page_objects/advancedSearchPage";
 import ResultSearchPage from "../page_objects/ResultSearchPage";
+import { BASE_URL } from "../helpers/testDataHeaderPage";
 
 test.describe('footerPage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -347,6 +348,21 @@ test.describe('footerPage.spec', () => {
 		await advancedSearchPage.clickSearchBtn();
 		const resultSearchPage = new ResultSearchPage(page);
 		await expect(resultSearchPage.locators.getNotValidMessage()).toBeVisible();
+
+	});
+
+	test('ТС 02.1.37  Verify that the user can navigeate by breadcrumbs', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await advancedSearchPage.fillSKUField();
+		await advancedSearchPage.clickSearchBtn();
+		await expect(page).toHaveURL(RESULT_SEARCH_PAGE_URL);
+		const resultSearchPage = new ResultSearchPage(page);
+		await resultSearchPage.clickBreadcrmsCatalog();
+		await expect(page).toHaveURL(ADVANCED_SEARCH_PAGE_URL);
+		await resultSearchPage.clickBreadcrmsHome();
+		await expect(page).toHaveURL(BASE_URL);
 
 	});
 
