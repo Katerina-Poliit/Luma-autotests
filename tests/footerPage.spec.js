@@ -297,6 +297,14 @@ test.describe('footerPage.spec', () => {
 		await expect(advancedSearchPage.locators.getPriceField()).toBeVisible();
 	});
 
+	test('ТС 02.1.39 Verify that the "Advanced Search" page contains the "USD" field', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await expect(advancedSearchPage.locators.getUSDField()).toBeVisible();
+	});
+
+
 
 
 
