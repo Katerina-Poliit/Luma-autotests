@@ -290,6 +290,13 @@ test.describe('footerPage.spec', () => {
 		await expect(advancedSearchPage.locators. getShortDescriptionField()).toBeVisible();
 	});
 
+	test('ТС 02.1.32 Verify that the "Advanced Search" page contains the "Price" field', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await expect(advancedSearchPage.locators.getPriceField()).toBeVisible();
+	});
+
 
 
 
