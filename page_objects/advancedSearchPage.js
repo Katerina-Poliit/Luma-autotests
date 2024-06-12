@@ -5,7 +5,9 @@ class AndvancedSearchPage {
 
     locators = {
 
-        getSettingsSearch : () => this.page.locator('legend')
+        getSettingsSearch : () => this.page.locator('legend'),
+        getProductNameField: () => this.page.getByLabel('Product Name'),
+
     }
 }
 
