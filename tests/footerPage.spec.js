@@ -281,7 +281,6 @@ test.describe('footerPage.spec', () => {
 		await homePage.clickAdvancedSearchLink();
 		const advancedSearchPage = new AndvancedSearchPage(page);
 		await expect(advancedSearchPage.locators.getDescriptionField()).toBeVisible();
-
 	});
 
 
