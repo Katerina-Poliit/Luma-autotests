@@ -260,6 +260,14 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.28 Verify that the "Advanced Search" page contains the "Product Name" field', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await expect(advancedSearchPage.locators.getProductNameField()).toBeVisible();
+
+	});
+
 
 
 })
