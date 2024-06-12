@@ -11,7 +11,8 @@ class AndvancedSearchPage {
         getProductNameField: () => this.page.getByLabel('Product Name'),
         getSKUField: () => this.page.getByLabel('SKU'),
         getDescriptionField: () => this.page.getByLabel('Description', { exact: true }),
-        getShortDescriptionField: () => this.page.getByLabel('Short Description')
+        getShortDescriptionField: () => this.page.getByLabel('Short Description'),
+        getPriceField: () => this.page.getByLabel('Price')
 
     }
 }
