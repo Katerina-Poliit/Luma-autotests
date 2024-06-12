@@ -3,6 +3,7 @@ import HomePage from "../page_objects/homePage"
 import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT, ADVANCED_SEARCH_PAGE_URL } from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
 import SearchtermsPage from "../page_objects/searchTermsPage";
+import AndvancedSearchPage from "../page_objects/advancedSearchPage";
 
 test.describe('footerPage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -247,6 +248,15 @@ test.describe('footerPage.spec', () => {
 	test('ТС 02.1.27 Verify that the "Advanced Search" link opens the page, the user clicked on the "Advanced Search" link', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getAdvancedSearchLink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 02.1.27.01 Verify that the "Advanced Search" page contains the search settings', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await expect(advancedSearchPage.locators.getSettingsSearch()).toBeVisible();
+		await expect(advancedSearchPage.locators.getSettingsSearch()).toHaveText('Search Settings')
 
 	});
 

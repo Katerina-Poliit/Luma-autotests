@@ -5,6 +5,7 @@ class AndvancedSearchPage {
 
     locators = {
 
+        getSettingsSearch : () => this.page.locator('legend')
     }
 }
 
