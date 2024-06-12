@@ -1,4 +1,6 @@
 import HomePage from "./homePage";
+import ResultSearchPage from "./ResultSearchPage";
+
 
 class AndvancedSearchPage {
     constructor (page) {
@@ -17,6 +19,17 @@ class AndvancedSearchPage {
         getSearchBtn: () => this.page.locator('#form-validate').getByRole('button', { name: 'Search' })
 
     }
+
+    async fillSKUField() {
+		await this.locators. getSKUField().fill('WJ12');
+		return this;
+	}
+
+    async clickSearchBtn() {
+		await this.locators.getSearchBtn().click();
+		return new ResultSearchPage(this.page);
+	}
+
 }
 
 export default AndvancedSearchPage;

@@ -1,9 +1,10 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
-import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT, ADVANCED_SEARCH_PAGE_URL, SEARCH_BTN_TEXT } from "../helpers/testDataFooterPage";
+import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT, ADVANCED_SEARCH_PAGE_URL, SEARCH_BTN_TEXT, RESULT_SEARCH_PAGE_URL } from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
 import SearchtermsPage from "../page_objects/searchTermsPage";
 import AndvancedSearchPage from "../page_objects/advancedSearchPage";
+import ResultSearchPage from "../page_objects/ResultSearchPage";
 
 test.describe('footerPage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -314,6 +315,18 @@ test.describe('footerPage.spec', () => {
 		await expect(advancedSearchPage.locators. getSearchBtn()).toHaveCSS('background', 'rgb(25, 121, 195) none repeat scroll 0% 0% / auto padding-box border-box');
 		await expect(advancedSearchPage.locators. getSearchBtn()).toHaveText(SEARCH_BTN_TEXT);
 	});
+
+	test('ТС 02.1.34  Verify that the transition to the results page is successful, at least one field is filled with valid data', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await advancedSearchPage.fillSKUField();
+		await advancedSearchPage.clickSearchBtn();
+		await expect(page).toHaveURL(RESULT_SEARCH_PAGE_URL);
+		const resultSearchPage = new ResultSearchPage(page);
+
+	});
+
 
 
 
