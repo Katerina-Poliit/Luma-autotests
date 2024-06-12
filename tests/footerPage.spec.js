@@ -327,6 +327,17 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.36  Verify that the an informational message is displayed on the result page', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		const advancedSearchPage = new AndvancedSearchPage(page);
+		await advancedSearchPage.fillSKUField();
+		await advancedSearchPage.clickSearchBtn();
+		await expect(page).toHaveURL(RESULT_SEARCH_PAGE_URL);
+		const resultSearchPage = new ResultSearchPage(page);
+		await expect(resultSearchPage.locators.getValidMessage()).toBeVisible();
+
+	});
 
 
 
