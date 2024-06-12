@@ -5,7 +5,7 @@ class ResultSearchPage {
 
 
     locators = {
-        getValidMessage: () => this.locators.locator('div').filter({ hasText: 'Don\'t see what you\'re looking' }).nth(3)
+        getValidMessage: () => this.page.getByText('1 item were found using the')
     }
 }
 
