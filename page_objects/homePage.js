@@ -5,6 +5,7 @@ import WriteForUsPage from "./writeForUsPage";
 import SubscribePage from "./SubscribePage";
 import PolicyPage from "./policyPage";
 import SearchtermsPage from "./searchTermsPage";
+import AndvancedSearchPage from "./advancedSearchPage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -34,7 +35,8 @@ class HomePage {
 		getSubscribeLink: () => this.page.getByRole('link', { name: 'Subscribe' }),
 		getPrivacyCookiesLink: () => this.page.getByRole('link', { name: 'Privacy and Cookie Policy' }),
 		getSearchTermsLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
-		
+		getAdvancedSearchLink: () => this.page.getByRole('link', { name: 'Advanced Search' })
+
 
 
 	};
@@ -118,6 +120,12 @@ class HomePage {
 		await this.locators.getSearchTermsLink().click();
 		return new SearchtermsPage(this.page);
 	}
+
+	async clickAdvancedSearchLink() {
+		await this.locators.getAdvancedSearchLink().click();
+		return new AndvancedSearchPage(this.page);
+	}
 }
+
 
 export default HomePage;
