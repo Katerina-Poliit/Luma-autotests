@@ -1,7 +1,8 @@
 // url
 
 export const POLICY_PAGE_URL = 'https://magento.softwaretestingboard.com/privacy-policy-cookie-restriction-mode';
-export const SEARCH_TERM_LINK_URL = 'https://magento.softwaretestingboard.com/search/term/popular/'
+export const SEARCH_TERM_LINK_URL = 'https://magento.softwaretestingboard.com/search/term/popular/';
+export const ADVANCED_SEARCH_PAGE_URL = 'https://magento.softwaretestingboard.com/catalogsearch/advanced/';
 
 
 //test data

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
-import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT } from "../helpers/testDataFooterPage";
+import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT, ADVANCED_SEARCH_PAGE_URL } from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
 import SearchtermsPage from "../page_objects/searchTermsPage";
 
@@ -234,6 +234,13 @@ test.describe('footerPage.spec', () => {
 	test('ТС 02.1.25 Verify that the "Advanced Search" link is placed in the footer', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getAdvancedSearchLink()).toBeVisible();
+
+	});
+
+	test('ТС 02.1.26 Verify that the "Advanced Search" link opens the page, the user clicked on the "Advanced Search" link', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickAdvancedSearchLink();
+		await expect(page).toHaveURL(ADVANCED_SEARCH_PAGE_URL);
 
 	});
 
