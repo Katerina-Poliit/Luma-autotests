@@ -244,6 +244,12 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.27 Verify that the "Advanced Search" link opens the page, the user clicked on the "Advanced Search" link', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getAdvancedSearchLink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 
 
 })
