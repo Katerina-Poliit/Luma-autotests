@@ -7,6 +7,7 @@ class AndvancedSearchPage {
 
         getSettingsSearch : () => this.page.locator('legend'),
         getProductNameField: () => this.page.getByLabel('Product Name'),
+        getSKUField: () => this.page.getByLabel('SKU')
 
     }
 }
