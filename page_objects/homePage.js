@@ -37,9 +37,7 @@ class HomePage {
 		getSearchTermsLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
 		getAdvancedSearchLink: () => this.page.getByRole('link', { name: 'Advanced Search' }),
 		getDropdownSearch: () => this.page.locator('#search_autocomplete > ul > li'),
-
-
-
+		getDropdownItem: () => this.page.locator('.qs-option-name').filter({hasText: 'shorts for men'})
 	};
 
 	async open() {
@@ -50,7 +48,6 @@ class HomePage {
 		await this.locators.getLogo().click();
 		return this;
 	}
-
 
 	async clickNoteslink() {
 		await this.locators.getNoteslink().click();
@@ -126,6 +123,12 @@ class HomePage {
 		await this.locators.getAdvancedSearchLink().click();
 		return new AndvancedSearchPage(this.page);
 	}
+
+	async clickDropdownItem() {
+		await this.locators.getDropdownItem().click();
+		return new SearchResultPageWithResults(this.page);
+	}
+
 }
 
 
