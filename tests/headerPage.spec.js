@@ -270,8 +270,6 @@ test.describe('headerPage.spec', () => {
 
 		const searchResultPageWithResults = await homePage.pressSearchField();
 
-		const alex = await searchResultPageWithResults.locators.getRelatedSearchTerms();
-
 		const regex = new RegExp(SEARCH_ITEM, 'i'); 
 
 		const isMatchingItem = AUTOCOMPLETELIST.some(item => regex.test(item));
@@ -316,6 +314,31 @@ test.describe('headerPage.spec', () => {
 		}
 			
 	});
+
+	test('ТС 01.1.27 Verify that the user is redirected to the search results page after clicking a product name in the drop-down list, and the search results match the query entered in the search bar', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await homePage.fillSearchFieldSmth(SEARCH_ITEM);
+
+		await expect(homePage.locators.getDropdownItem()).toBeVisible();
+
+		const searchResultPageWithResults = await homePage.clickDropdownItem();
+
+		await page.waitForLoadState('networkidle');
+
+		await expect(page).toHaveURL(/search/);
+
+		const regex = new RegExp(SEARCH_ITEM, 'i'); 
+
+		const isMatchingItem = AUTOCOMPLETELIST.some(item => regex.test(item));
+
+		expect(isMatchingItem).toBeTruthy();
+
+		await expect(searchResultPageWithResults.locators.getSearchResultShort()).toBeVisible();
+		await expect(searchResultPageWithResults.locators.getSearchResultShort()).toContainText(SEARCH_ITEM);
+
+	});
+
 
 })
 
