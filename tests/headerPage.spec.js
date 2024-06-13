@@ -4,6 +4,7 @@ import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POIN
 import Logo from "../page_objects/logo";
 import SignIn from "../page_objects/SignIn";
 import CreateAccount from "../page_objects/createAccount";
+import SearchField from "../page_objects/searchField";
 
 
 test.describe('headerPage.spec', () => {
@@ -374,6 +375,19 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.30 Verify that the search field  available on all pages of the site', async ({ page }) => {
+
+		const search = new SearchField(page);
+		const allLinksWithSearchField = NAVBAR_URLs_END_POINTS_FULL;
+
+		for(let link of allLinksWithSearchField){
+
+		const searchField = await search.locators.getSearchField(link);
+
+		await expect(searchField).toBeVisible();
+		}
+
+	});
 
 })
 
