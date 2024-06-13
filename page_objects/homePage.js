@@ -35,7 +35,8 @@ class HomePage {
 		getSubscribeLink: () => this.page.getByRole('link', { name: 'Subscribe' }),
 		getPrivacyCookiesLink: () => this.page.getByRole('link', { name: 'Privacy and Cookie Policy' }),
 		getSearchTermsLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
-		getAdvancedSearchLink: () => this.page.getByRole('link', { name: 'Advanced Search' })
+		getAdvancedSearchLink: () => this.page.getByRole('link', { name: 'Advanced Search' }),
+		getDropdownSearch: () => this.page.locator('#search_autocomplete > ul > li'),
 
 
 
