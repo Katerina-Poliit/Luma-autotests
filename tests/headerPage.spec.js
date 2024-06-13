@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT, SEARCH_FIELD_PLACEHOLDER_TEXT, SEARCH_ITEM, AUTOCOMPLETELIST } from "../helpers/testDataHeaderPage";
+import { LINKS_LIST, BASE_URL,NAVBAR_URLs_END_POINTS, MY_ACCOUNT_CREATE_END_POINT, LOGO_ALIGNMENT, SIGN_IN_LINK_TEXT, CUSTOMER_LOGIN_PAGE_URL, CUSTOMER_LOGIN_PAGE_HEADER_TEXT, NAVBAR_URLs_END_POINTS_FULL, CREATE_AN_ACCOUNT_LINK_TEXT, CREATE_NEW_CUSTOMER_ACCOUNT_PAGE_URL, CREATE__NEW_CUSTOMER_ACCOUNT_PAGE_HEADER_TEXT, SEARCH_FIELD_PLACEHOLDER_TEXT, SEARCH_ITEM, AUTOCOMPLETELIST, SEARCH_ITEM_NEGATIVE, NO_RESULTS_MESSAGE_TEXT } from "../helpers/testDataHeaderPage";
 import Logo from "../page_objects/logo";
 import SignIn from "../page_objects/SignIn";
 import CreateAccount from "../page_objects/createAccount";
@@ -280,6 +280,19 @@ test.describe('headerPage.spec', () => {
 
 		await expect(searchResultPageWithResults.locators.getSearchResult()).toBeVisible();
 		await expect(searchResultPageWithResults.locators.getSearchResult()).toContainText(SEARCH_ITEM);
+
+	});
+
+	test('ТС 01.1.25 Verify that the user receives "Your search returned no results" if no results are found', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await homePage.fillSearchFieldSmth(SEARCH_ITEM_NEGATIVE);
+
+		const searchResultPageWithResults = await homePage.clickSearchBtn();
+
+		await expect(searchResultPageWithResults.locators.getSearchResultNegative()).toBeVisible();
+		await expect(searchResultPageWithResults.locators.getNoResultsMessage()).toBeVisible();
+		await expect(searchResultPageWithResults.locators.getNoResultsMessage()).toHaveText(NO_RESULTS_MESSAGE_TEXT);
 
 	});
 
