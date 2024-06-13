@@ -350,6 +350,30 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.29 Verify the search field is not case-sensitive', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		const searchItemUpperCase = "SHORT";
+		const searchItemLowerCase = searchItemUpperCase.toLowerCase();
+  
+		await homePage.fillSearchFieldSmth(searchItemUpperCase);
+		await page.waitForSelector("#search_autocomplete>ul>li>span:first-child");
+		const autocompleteListUpperCase = await page.locator("#search_autocomplete>ul>li>span:first-child").allInnerTexts();
+  
+		await homePage.cleanSearchField();
+  
+		await homePage.fillSearchFieldSmth(searchItemLowerCase);
+		await page.waitForSelector("#search_autocomplete>ul>li>span:first-child");
+		const autocompleteListLowerCase = await page.locator("#search_autocomplete>ul>li>span:first-child").allInnerTexts();
+  
+		//Ця перевірка порівнює два масиви autocompleteListUpperCase та autocompleteListLowerCase. Метод .sort() використовується для сортування масивів, щоб вони були в одному і тому ж порядку елементів перед порівнянням. Після цього масиви порівнюються за допомогою .toEqual(), що перевіряє, чи мають обидва масиви однаковий вміст і порядок елементів.
+		expect(autocompleteListUpperCase.sort()).toEqual(autocompleteListLowerCase.sort());
+
+		//Ця перевірка порівнює довжину двох масивів autocompleteListLowerCase та autocompleteListUpperCase. Вона переконується, що обидва масиви мають однакову кількість елементів. Це важливо для того, щоб переконатись, що ні один з масивів не містить додаткових елементів, які можуть вплинути на порівняння.
+		expect(autocompleteListLowerCase.length).toEqual(autocompleteListUpperCase.length);
+
+	});
+
 
 })
 
