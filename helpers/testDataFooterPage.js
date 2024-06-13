@@ -4,6 +4,7 @@ export const POLICY_PAGE_URL = 'https://magento.softwaretestingboard.com/privacy
 export const SEARCH_TERM_LINK_URL = 'https://magento.softwaretestingboard.com/search/term/popular/';
 export const ADVANCED_SEARCH_PAGE_URL = 'https://magento.softwaretestingboard.com/catalogsearch/advanced/';
 export const RESULT_SEARCH_PAGE_URL = 'https://magento.softwaretestingboard.com/catalogsearch/advanced/result/?name=&sku=WJ12&description=&short_description=&price%5Bfrom%5D=&price%5Bto%5D=';
+export const ORDERS_RESULTS_PAGE_URL = 'https://magento.softwaretestingboard.com/sales/guest/form/'
 
 
 //test data
@@ -34,6 +35,7 @@ export const SUBSCRIBE_LINK_URL = 'https://softwaretestingboard.com/subscribe/?u
 
   export const SEARCH_TERMS_PAGE_HEANDING_TEXT = 'Popular Search Terms';
   export const SEARCH_BTN_TEXT = 'Search';
+  export const ORDERS_AND_RETURNS_PAGE_FIELDS = ['Order ID', 'Billing Last Name', 'Find Order By', 'Email'];
 //test data
 
 // export cons

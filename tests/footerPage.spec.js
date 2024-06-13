@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage"
-import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT, ADVANCED_SEARCH_PAGE_URL, SEARCH_BTN_TEXT, RESULT_SEARCH_PAGE_URL } from "../helpers/testDataFooterPage";
+import { NOTES_LINK_TEXT, NOTES_PAGE_URL, PARTICEAPI_PAGE_URL, FOR_US_LINK_URL, SUBSCRIBE_LINK_URL, POLICY_PAGE_URL, expectedMenuItems, SEARCH_TERM_LINK_URL, SEARCH_TERMS_PAGE_HEANDING_TEXT, ADVANCED_SEARCH_PAGE_URL, SEARCH_BTN_TEXT, RESULT_SEARCH_PAGE_URL, ORDERS_RESULTS_PAGE_URL, ORDERS_AND_RETURNS_PAGE_FIELDS } from "../helpers/testDataFooterPage";
 import PolicyPage from "../page_objects/policyPage";
 import SearchtermsPage from "../page_objects/searchTermsPage";
 import AndvancedSearchPage from "../page_objects/advancedSearchPage";
 import ResultSearchPage from "../page_objects/ResultSearchPage";
 import { BASE_URL } from "../helpers/testDataHeaderPage";
+import OrdersReturnsPage from "../page_objects/ordersReturnsPage";
 
 test.describe('footerPage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -366,9 +367,54 @@ test.describe('footerPage.spec', () => {
 
 	});
 
+	test('ТС 02.1.43 Verify that the "Order and Returns" link is placed in the footer', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getOrsersReturnsLink()).toBeVisible();
+
+	});
+
+	test('ТС 02.1.44 Verify that the "Order and Returns" link contains the pointer cursor', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getOrsersReturnsLink()).toHaveCSS('cursor', 'pointer');
+
+	});
 
 
+	test('ТС 02.1.45 Verify that the "Order and Returns" link opens the page, the user clicked on the "Order and Returns" link', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickOrsersReturnsLink();
+		await expect(page).toHaveURL(ORDERS_RESULTS_PAGE_URL);
+        const ordersResultsPage = new OrdersReturnsPage(page);
+	});
 
+	test('ТС 02.1.46 Verify that the "Order and Return" page contains fields to fill in', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickOrsersReturnsLink();
+        const ordersResultsPage = new OrdersReturnsPage(page);
+
+		const fields = await ordersResultsPage.locators.getOrdersAndReturnsPageFields();
+
+		for (let i = 0; i < ORDERS_AND_RETURNS_PAGE_FIELDS.length; i++) {
+			const field = fields[i];
+			await expect(field).toHaveText(ORDERS_AND_RETURNS_PAGE_FIELDS[i]);
+		}
+
+	});
+
+	test('ТС 02.1.47  Verify that tthe "Order and Return" page contains the "Continue" button', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await homePage.clickOrsersReturnsLink();
+        const ordersResultsPage = new OrdersReturnsPage(page);
+		await expect(ordersResultsPage.locators.getContinueBtn()).toBeVisible();
+		await expect(ordersResultsPage.locators.getContinueBtn()).toHaveText('Continue');
+		await expect(ordersResultsPage.locators.getContinueBtn()).toHaveCSS('background', 'rgb(25, 121, 195) none repeat scroll 0% 0% / auto padding-box border-box');
+	});
+
+	test('ТС 02.1.38 Verify that the footer content contains a gray color', async ({ page }) => {
+		const homePage = new HomePage(page);
+		await expect(homePage.locators.getFooter()).toHaveCSS('background', 'rgb(244, 244, 244) none repeat scroll 0% 0% / auto padding-box border-box');
+
+	});
 
 })
 

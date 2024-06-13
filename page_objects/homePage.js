@@ -6,6 +6,7 @@ import SubscribePage from "./SubscribePage";
 import PolicyPage from "./policyPage";
 import SearchtermsPage from "./searchTermsPage";
 import AndvancedSearchPage from "./advancedSearchPage";
+import OrdersReturnsPage from "./ordersReturnsPage";
 
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
@@ -38,7 +39,8 @@ class HomePage {
 		getAdvancedSearchLink: () => this.page.getByRole('link', { name: 'Advanced Search' }),
 		getDropdownSearch: () => this.page.locator('#search_autocomplete > ul > li'),
 		getDropdownItem: () => this.page.locator('.qs-option-name').filter({hasText: 'shorts for men'}),
-		getCartBtn: () => this.page.getByRole('link', { name: ' My Cart' })
+		getCartBtn: () => this.page.getByRole('link', { name: ' My Cart' }),
+		getOrsersReturnsLink: () => this.page.getByRole('link', { name: 'Orders and Returns' })
 	};
 
 	async open() {
@@ -128,6 +130,11 @@ class HomePage {
 	async clickDropdownItem() {
 		await this.locators.getDropdownItem().click();
 		return new SearchResultPageWithResults(this.page);
+	}
+
+	async clickOrsersReturnsLink() {
+		await this.locators.getOrsersReturnsLink().click();
+		return new OrdersReturnsPage(this.page);
 	}
 
 }
