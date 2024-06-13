@@ -339,6 +339,17 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.28 Verify that the search field placeholder disappears after entering text in the field', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSearchField()).toBeVisible();
+
+		await homePage.fillSearchFieldSmth(SEARCH_ITEM);
+
+		await expect(homePage.locators.getSearchField()).toBeVisible();
+
+	});
+
 
 })
 
