@@ -396,5 +396,13 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.32 Verify the the shopping cart icon has a cursor pointer', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getCartBtn()).toBeVisible();
+		await expect(homePage.locators.getCartBtn()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 })
 
