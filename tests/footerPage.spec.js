@@ -126,7 +126,7 @@ test.describe('footerPage.spec', () => {
 
 	});
 
-	test('ТС 02.1.16 Verify that the "Privacy and Cookie Policy" link opens the page, the user clicked on the "Privacy and Cookie Policy" link', async ({ page }) => {
+	test('ТС 02.1.16 Verify that the "Privacy and Cookie Policy" link opens the page, the user clicks on the "Privacy and Cookie Policy" link', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickPrivacyCookiesLink();
 		const policyPage = new PolicyPage(page)
@@ -180,7 +180,7 @@ test.describe('footerPage.spec', () => {
 	});
 
 
-	test('ТС 02.1.19 navigation menu on the left is gray', async ({ page }) => {
+	test('ТС 02.1.19 Verify that the navigation menu is colored gray', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickPrivacyCookiesLink();
 		const policyPage = new PolicyPage(page)
@@ -217,7 +217,7 @@ test.describe('footerPage.spec', () => {
 		await expect(searchTerms.locators.getSearchTermsHeading()).toHaveText(SEARCH_TERMS_PAGE_HEANDING_TEXT);
 		await expect(searchTerms.locators.getSearchTerms()).toBeVisible();
 	});
-	test('ТС 02.1.24 Verify that all tags on the "Popular Search Terms" page lead to other pages', async ({ page }) => {
+	test('ТС 02.1.24 Verify that  all tags on the "Popular Search Queries" page redirect to other pages', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickSearchTermsLink();
 		const searchTerms = new SearchtermsPage(page);
@@ -241,14 +241,14 @@ test.describe('footerPage.spec', () => {
 
 	});
 
-	test('ТС 02.1.26 Verify that the "Advanced Search" link opens the page, the user clicked on the "Advanced Search" link', async ({ page }) => {
+	test('ТС 02.1.26 Verify that the "Advanced Search" link opens the page, the user clicks on the "Advanced Search" link', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickAdvancedSearchLink();
 		await expect(page).toHaveURL(ADVANCED_SEARCH_PAGE_URL);
 
 	});
 
-	test('ТС 02.1.27 Verify that the "Advanced Search" link opens the page, the user clicked on the "Advanced Search" link', async ({ page }) => {
+	test('ТС 02.1.27 Verify that the "Advanced Search" link opens the page, the user clicks on the "Advanced Search" link', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getAdvancedSearchLink()).toHaveCSS('cursor', 'pointer');
 
@@ -373,14 +373,14 @@ test.describe('footerPage.spec', () => {
 
 	});
 
-	test('ТС 02.1.44 Verify that the "Order and Returns" link contains the pointer cursor', async ({ page }) => {
+	test('ТС 02.1.44 Verify that the "Order and Returns" link contains the  cursor pointer', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await expect(homePage.locators.getOrsersReturnsLink()).toHaveCSS('cursor', 'pointer');
 
 	});
 
 
-	test('ТС 02.1.45 Verify that the "Order and Returns" link opens the page, the user clicked on the "Order and Returns" link', async ({ page }) => {
+	test('ТС 02.1.45 Verify that the "Order and Returns" link opens the page, the user clicks on the "Order and Returns" link', async ({ page }) => {
 		const homePage = new HomePage(page);
 		await homePage.clickOrsersReturnsLink();
 		await expect(page).toHaveURL(ORDERS_RESULTS_PAGE_URL);
