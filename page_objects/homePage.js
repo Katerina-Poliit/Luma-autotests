@@ -37,7 +37,8 @@ class HomePage {
 		getSearchTermsLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
 		getAdvancedSearchLink: () => this.page.getByRole('link', { name: 'Advanced Search' }),
 		getDropdownSearch: () => this.page.locator('#search_autocomplete > ul > li'),
-		getDropdownItem: () => this.page.locator('.qs-option-name').filter({hasText: 'shorts for men'})
+		getDropdownItem: () => this.page.locator('.qs-option-name').filter({hasText: 'shorts for men'}),
+		getCartBtn: () => this.page.getByRole('link', { name: ' My Cart' })
 	};
 
 	async open() {

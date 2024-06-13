@@ -389,5 +389,12 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.31 Verify the the header of the site contains the shopping cart icon', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getCartBtn()).toBeVisible();
+
+	});
+
 })
 
