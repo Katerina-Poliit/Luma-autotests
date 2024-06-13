@@ -296,5 +296,26 @@ test.describe('headerPage.spec', () => {
 
 	});
 
+	test('ТС 01.1.26 Verify that an automatic search begins and the dropdown with relevant products appears after entering three letters in the search field', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await homePage.fillSearchFieldSmth(SEARCH_ITEM);
+
+		await expect(homePage.locators.getDropdownSearch()).toHaveCount(8);
+
+		// Отримання всіх елементів випадаючого списку
+		const dropdownItems = await homePage.locators.getDropdownSearch().all();
+
+		// Перевірка, що кожен елемент містить слово 'short'
+		for (const item of dropdownItems) {
+
+			const textContent = await item.textContent();
+
+			//trim() для видалення пробілів з початку і кінця рядка та toLowerCase() для перетворення тексту до нижнього регістру перед перевіркою.
+			expect(textContent.trim().toLowerCase()).toContain('short'); 
+		}
+			
+	});
+
 })
 
