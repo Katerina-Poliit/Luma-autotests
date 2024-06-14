@@ -15,6 +15,7 @@ import WomenPage from "./womenPage";
 import MenPage from "./menPage";
 import GearPage from "./gearPage";
 import TrainingPage from "./trainingPage";
+import SalePage from "./salePage";
 
 
 class HomePage {
@@ -171,6 +172,11 @@ class HomePage {
 	async clickTrainingLink() {
 		await this.locators.getTrainingLink().click();
 		return new TrainingPage(this.page);
+	}
+
+	async clickSaleLink() {
+		await this.locators.getSaleLink().click();
+		return new SalePage(this.page);
 	}
 
 }
