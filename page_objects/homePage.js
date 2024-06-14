@@ -60,6 +60,7 @@ class HomePage {
 		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' }),
 		getShopNewYogaBtn: () => this.page.locator('.button'),
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
+		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' })
 
 	};
 
