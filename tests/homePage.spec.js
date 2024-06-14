@@ -367,6 +367,15 @@ test.describe('homePage.spec', () => {
 		const womenTopsPage = new WomenTopsPage(page);
 	});
 
+	test('ТС 03.1.122 Verify that the "Tops" dropdown contains the "Jackets" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await homePage.hoverMomenCategoryTops();
+		await expect(homePage.locators.getWomenTopsSubcategoryJackets()).toBeVisible();
+
+	});
 
 
 })

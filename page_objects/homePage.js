@@ -62,6 +62,7 @@ class HomePage {
 		getShopNewYogaBtn: () => this.page.locator('.button'),
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
 		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' }),
+		getWomenTopsSubcategoryJackets:() => this.page.locator('#ui-id-11'),
 
 	};
 
@@ -209,6 +210,12 @@ class HomePage {
 		await this.locators.getMomenCategoryTops().click();
 
 		return new WomenTopsPage(this.page);
+	  }
+
+	  async hoverMomenCategoryTops() {
+		await this.locators.getMomenCategoryTops().hover();
+
+		return this;
 	  }
 
 
