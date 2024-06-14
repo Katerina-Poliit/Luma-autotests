@@ -192,4 +192,19 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.19 Verify that the "Training" navigation menu link redirects to corresponding page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+	
+		await expect(page).toHaveURL(BASE_URL);
+	
+		const trainingPage = await homePage.clickTrainingLink();
+	
+		await expect(page).toHaveURL(TRAINING_URL);
+		  
+		await expect(trainingPage.locators.getHeader()).toBeVisible();
+		await expect(trainingPage.locators.getHeader()).toHaveText(TRAINING_PAGE_HEADER_TEXT);
+	
+	});
+
 })
