@@ -412,6 +412,15 @@ test.describe('homePage.spec', () => {
 		await expect(homePage.locators.getWomenTopsSubcategoryHoodiesSweatshirts()).toBeVisible();
 		await expect(homePage.locators.getWomenTopsSubcategoryHoodiesSweatshirts()).toHaveText(WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS);
 
+	});
+
+	test('03.1.124.1 Verify that the "Hoddies & Sweatshirts" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await homePage.hoverMomenCategoryTops();
+		await expect(homePage.locators.getWomenTopsSubcategoryHoodiesSweatshirts()).toHaveCSS('cursor', 'pointer');
 
 	});
 
