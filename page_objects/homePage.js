@@ -11,6 +11,7 @@ import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
 import SearchResultPageWithResults from "./searchResultPageWithResults";
 import WhatsNewPage from "./watsNewPage";
+import WomenPage from "./womenPage";
 
 
 class HomePage {
@@ -147,6 +148,11 @@ class HomePage {
 	async clickWatsNewLink() {
 		await this.locators.getWatsNewLink().click();
 		return new WhatsNewPage(this.page);
+	}
+
+	async clickWomenLink() {
+		await this.locators.getWomenLink().click();
+		return new WomenPage(this.page);
 	}
 
 }

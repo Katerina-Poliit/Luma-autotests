@@ -145,6 +145,20 @@ test.describe('homePage.spec', () => {
 		await expect(whatsNewPage.locators.getHeader()).toBeVisible();
 		await expect(whatsNewPage.locators.getHeader()).toHaveText(WHATS_NEW_PAGE_HEADER_TEXT);
 
+		});
+
+	test('ТС 03.1.16 Verify that the "Women" navigation menu link redirects to corresponding page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+	
+		await expect(page).toHaveURL(BASE_URL);
+	
+		const womenPage = await homePage.clickWomenLink();
+	
+		await expect(page).toHaveURL(WOMEN_URL);
+		  
+		await expect(womenPage.locators.getHeader()).toBeVisible();
+		await expect(womenPage.locators.getHeader()).toHaveText(WOMEN_PAGE_HEADER_TEXT);
 	
 	});
 
