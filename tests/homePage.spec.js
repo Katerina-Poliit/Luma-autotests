@@ -304,5 +304,14 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.30 Verify that the "Shop New Yoga" button is colored blue', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getShopNewYogaBtn()).toBeVisible();
+		await expect(homePage.locators.getShopNewYogaBtn()).toHaveCSS('background', 'rgb(25, 121, 195) none repeat scroll 0% 0% / auto padding-box border-box');
+	
+	});
+
 
 })
