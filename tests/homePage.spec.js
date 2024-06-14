@@ -177,4 +177,19 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.18 Verify that the "Gear" navigation menu link redirects to corresponding page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+	
+		await expect(page).toHaveURL(BASE_URL);
+	
+		const gearPage = await homePage.clickGearLink();
+	
+		await expect(page).toHaveURL(GEAR_URL);
+		  
+		await expect(gearPage.locators.getHeader()).toBeVisible();
+		await expect(gearPage.locators.getHeader()).toHaveText(GEAR_PAGE_HEADER_TEXT);
+	
+	});
+
 })
