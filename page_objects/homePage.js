@@ -16,6 +16,8 @@ import MenPage from "./menPage";
 import GearPage from "./gearPage";
 import TrainingPage from "./trainingPage";
 import SalePage from "./salePage";
+import LumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
+import NewLumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
 
 
 class HomePage {
@@ -52,7 +54,7 @@ class HomePage {
 		getTrainingLink: () => this.page.getByRole('menuitem', { name: 'Training' }),
 		getSaleLink: () => this.page.getByRole('menuitem', { name: 'Sale' }),
 		getPromoBlock: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3),
-		getLumaYogaCollectionPromoBlock: () => this.page.getByRole('link', { name: 'New Luma Yoga Collection Get' })
+		getLumaYogaCollectionSection: () => this.page.getByRole('link', { name: 'New Luma Yoga Collection Get' })
 
 
 	};
@@ -179,6 +181,11 @@ class HomePage {
 	async clickSaleLink() {
 		await this.locators.getSaleLink().click();
 		return new SalePage(this.page);
+	}
+
+	async clickNewLumaYogaCollectionSection() {
+		await this.locators.getLumaYogaCollectionSection().click();
+		return new NewLumaYogaCollectionSectionPage(this.page);
 	}
 
 }

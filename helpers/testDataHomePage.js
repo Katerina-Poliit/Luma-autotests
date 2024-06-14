@@ -7,6 +7,7 @@ export const MEN_URL = 'https://magento.softwaretestingboard.com/men.html';
 export const GEAR_URL = 'https://magento.softwaretestingboard.com/gear.html';
 export const TRAINING_URL = 'https://magento.softwaretestingboard.com/training.html';
 export const SALE_URL = 'https://magento.softwaretestingboard.com/sale.html';
+export const NEW_LUMA_YOGA_COLLECTION_URL = 'https://magento.softwaretestingboard.com/collections/yoga-new.html';
 
 //test data
 
@@ -23,3 +24,4 @@ export const MEN_PAGE_HEADER_TEXT = 'Men';
 export const GEAR_PAGE_HEADER_TEXT = 'Gear';
 export const TRAINING_PAGE_HEADER_TEXT = 'Training';
 export const SALE_PAGE_HEADER_TEXT = 'Sale';
+export const NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT = 'New Luma Yoga Collection';
