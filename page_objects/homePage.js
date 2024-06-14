@@ -19,6 +19,7 @@ import SalePage from "./salePage";
 import LumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
 import NewLumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
 import WomenTopsPage from "./womenTopsPage";
+import WomenTopsSubcategoryJacketsPage from "./WomenTopsSubcategoryJacketsPage";
 
 
 class HomePage {
@@ -217,6 +218,12 @@ class HomePage {
 		await this.locators.getMomenCategoryTops().hover();
 
 		return this;
+	  }
+
+	  async clickWomenTopsSubcategoryJackets() {
+		await this.locators.getWomenTopsSubcategoryJackets().click();
+
+		return new WomenTopsSubcategoryJacketsPage(this.page);
 	  }
 
 
