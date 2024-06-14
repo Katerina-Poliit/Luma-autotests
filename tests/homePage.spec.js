@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { BASE_URL, WHATS_NEW_LINK_TEXT, WOMEN_LINK_TEXT, MEN_LINK_TEXT, GEAR_LINK_TEXT, TRAINING_LINK_TEXT, SALE_LINK_TEXT, WHATS_NEW_PAGE_HEADER_TEXT, WOMEN_PAGE_HEADER_TEXT, MEN_PAGE_HEADER_TEXT, GEAR_PAGE_HEADER_TEXT, TRAINING_PAGE_HEADER_TEXT, SALE_PAGE_HEADER_TEXT, WHATS_NEW_URL, WOMEN_URL, MEN_URL, GEAR_URL, TRAINING_URL, SALE_URL  } from "../helpers/testDataHomePage";
+import { BASE_URL, WHATS_NEW_LINK_TEXT, WOMEN_LINK_TEXT, MEN_LINK_TEXT, GEAR_LINK_TEXT, TRAINING_LINK_TEXT, SALE_LINK_TEXT, WHATS_NEW_PAGE_HEADER_TEXT, WOMEN_PAGE_HEADER_TEXT, MEN_PAGE_HEADER_TEXT, GEAR_PAGE_HEADER_TEXT, TRAINING_PAGE_HEADER_TEXT, SALE_PAGE_HEADER_TEXT, WHATS_NEW_URL, WOMEN_URL, MEN_URL, GEAR_URL, TRAINING_URL, SALE_URL, NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT, NEW_LUMA_YOGA_COLLECTION_URL  } from "../helpers/testDataHomePage";
 
 test.describe('homePage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -234,7 +234,7 @@ test.describe('homePage.spec', () => {
 
 		const homePage = new HomePage(page);
 	
-		await expect(homePage.locators.getLumaYogaCollectionPromoBlock()).toBeVisible();
+		await expect(homePage.locators.getLumaYogaCollectionSection()).toBeVisible();
 
 	});
 
@@ -242,8 +242,22 @@ test.describe('homePage.spec', () => {
 
 		const homePage = new HomePage(page);
 	
-		await expect(homePage.locators.getLumaYogaCollectionPromoBlock()).toBeVisible();
-		await expect(homePage.locators.getLumaYogaCollectionPromoBlock()).toHaveCSS('cursor', 'pointer');
+		await expect(homePage.locators.getLumaYogaCollectionSection()).toBeVisible();
+		await expect(homePage.locators.getLumaYogaCollectionSection()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 03.1.24 Verify that the user is redirected to the "New Luma Yoga Collection" page after clicking on the "New Luma Yoga Collection" promo section', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		const newLumaYogaCollectionSectionPage = await homePage.clickNewLumaYogaCollectionSection();
+
+		await expect(page).toHaveURL(NEW_LUMA_YOGA_COLLECTION_URL);
+
+		await expect(newLumaYogaCollectionSectionPage.locators.getHeader()).toBeVisible();
+		await expect(newLumaYogaCollectionSectionPage.locators.getHeader()).toHaveText(NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT);
+	
 
 	});
 
