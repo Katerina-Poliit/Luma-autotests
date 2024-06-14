@@ -55,8 +55,8 @@ class HomePage {
 		getSaleLink: () => this.page.getByRole('menuitem', { name: 'Sale' }),
 		getPromoBlock: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3),
 		getLumaYogaCollectionSection: () => this.page.getByRole('link', { name: 'New Luma Yoga Collection Get' }),
-		getLumaYogaCollectionSectionInfBlock: () => this.page.locator('.bg-white').first()
-
+		getLumaYogaCollectionSectionInfBlock: () => this.page.locator('.bg-white').first(),
+		getLumaYogaCollectionSectionInfBlockHeader: () => this.page.locator('.info').filter({ hasText: 'New Luma Yoga Collection' })
 
 	};
 
