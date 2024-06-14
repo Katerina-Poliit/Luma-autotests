@@ -58,7 +58,8 @@ class HomePage {
 		getLumaYogaCollectionSectionInfBlock: () => this.page.locator('.bg-white').first(),
 		getLumaYogaCollectionSectionInfBlockHeader: () => this.page.locator('.info').filter({ hasText: 'New Luma Yoga Collection' }),
 		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' }),
-		getShopNewYogaBtn: () => this.page.locator('.button')
+		getShopNewYogaBtn: () => this.page.locator('.button'),
+		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
 
 	};
 
@@ -195,6 +196,13 @@ class HomePage {
 		await this.locators.getShopNewYogaBtn().click();
 		return new NewLumaYogaCollectionSectionPage(this.page);
 	}
+
+	async hoverWomenLink() {
+		await this.locators.getWomenLink().hover();
+
+		return this;
+	  }
+
 
 }
 
