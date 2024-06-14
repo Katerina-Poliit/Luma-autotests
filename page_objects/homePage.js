@@ -18,6 +18,7 @@ import TrainingPage from "./trainingPage";
 import SalePage from "./salePage";
 import LumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
 import NewLumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
+import WomenTopsPage from "./womenTopsPage";
 
 
 class HomePage {
@@ -60,7 +61,7 @@ class HomePage {
 		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' }),
 		getShopNewYogaBtn: () => this.page.locator('.button'),
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
-		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' })
+		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' }),
 
 	};
 
@@ -202,6 +203,12 @@ class HomePage {
 		await this.locators.getWomenLink().hover();
 
 		return this;
+	  }
+
+	  async clickMomenCategoryTops() {
+		await this.locators.getMomenCategoryTops().click();
+
+		return new WomenTopsPage(this.page);
 	  }
 
 
