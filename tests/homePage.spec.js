@@ -222,4 +222,12 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.21 Verify that the Home page contains the promo block', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+	
+		await expect(homePage.locators.getPromoBlock()).toBeVisible();
+
+	});
+
 })
