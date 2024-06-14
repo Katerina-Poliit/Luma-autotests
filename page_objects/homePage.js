@@ -13,6 +13,7 @@ import SearchResultPageWithResults from "./searchResultPageWithResults";
 import WhatsNewPage from "./watsNewPage";
 import WomenPage from "./womenPage";
 import MenPage from "./menPage";
+import GearPage from "./gearPage";
 
 
 class HomePage {
@@ -159,6 +160,11 @@ class HomePage {
 	async clickMenLink() {
 		await this.locators.getMenLink().click();
 		return new MenPage(this.page);
+	}
+
+	async clickGearLink() {
+		await this.locators.getGearLink().click();
+		return new GearPage(this.page);
 	}
 
 }
