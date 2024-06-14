@@ -51,7 +51,8 @@ class HomePage {
 		getGearLink: () => this.page.getByRole('menuitem', { name: 'Gear' }),
 		getTrainingLink: () => this.page.getByRole('menuitem', { name: 'Training' }),
 		getSaleLink: () => this.page.getByRole('menuitem', { name: 'Sale' }),
-		getPromoBlock: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3)
+		getPromoBlock: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3),
+		getLumaYogaCollectionPromoBlock: () => this.page.getByRole('link', { name: 'New Luma Yoga Collection Get' })
 
 
 	};
