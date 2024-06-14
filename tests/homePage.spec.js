@@ -17,4 +17,11 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.2 Verify that the Home page contains the main content (body) of the page', async ({ page }) => {
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getBody()).toBeVisible();
+
+	});
+
 })

@@ -7,7 +7,6 @@ import PolicyPage from "./policyPage";
 import SearchtermsPage from "./searchTermsPage";
 import AndvancedSearchPage from "./advancedSearchPage";
 import OrdersReturnsPage from "./ordersReturnsPage";
-
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
 import SearchResultPageWithResults from "./searchResultPageWithResults";
@@ -21,11 +20,8 @@ class HomePage {
 	locators = {
 		getHeader: () => this.page.getByText('Toggle Nav My Cart My Cart'),
 		getLogo: () => this.page.getByLabel('store logo'),
-
 		getFooter: () => this.page.locator('.page-wrapper footer'),
 		getNoteslink: () => this.page.getByRole('link', { name: 'Notes' }),
-
-		// getFooter: () => this.page.getByRole('contentinfo'),
 		getNotesslink: () => this.page.locator('li').filter({ hasText: 'Notes' }),
 		getSignInlink: () => this.page.getByRole('link', { name: 'Sign In' }),
 		getCreateAnAccountlink: () => this.page.getByRole('banner').getByRole('link', { name: 'Create an Account' }),
@@ -40,7 +36,9 @@ class HomePage {
 		getDropdownSearch: () => this.page.locator('#search_autocomplete > ul > li'),
 		getDropdownItem: () => this.page.locator('.qs-option-name').filter({hasText: 'shorts for men'}),
 		getCartBtn: () => this.page.getByRole('link', { name: ' My Cart' }),
-		getOrsersReturnsLink: () => this.page.getByRole('link', { name: 'Orders and Returns' })
+		getOrsersReturnsLink: () => this.page.getByRole('link', { name: 'Orders and Returns' }),
+      //----------------------------- Home page -----------------------------------------------------------
+		getBody: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3)
 	};
 
 	async open() {
