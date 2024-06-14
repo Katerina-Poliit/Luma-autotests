@@ -9,7 +9,8 @@ export const TRAINING_URL = 'https://magento.softwaretestingboard.com/training.h
 export const SALE_URL = 'https://magento.softwaretestingboard.com/sale.html';
 export const NEW_LUMA_YOGA_COLLECTION_URL = 'https://magento.softwaretestingboard.com/collections/yoga-new.html';
 export const WOMEN_TOPS_PAGE_URL = 'https://magento.softwaretestingboard.com/women/tops-women.html';
-export const WOMEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html'
+export const WOMEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html';
+export const WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html'
 
 //test data
 

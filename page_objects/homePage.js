@@ -20,6 +20,7 @@ import LumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
 import NewLumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage";
 import WomenTopsPage from "./womenTopsPage";
 import WomenTopsSubcategoryJacketsPage from "./WomenTopsSubcategoryJacketsPage";
+import WomenHoodiesSweatshirtsPage from "./WomenHoodiesSweatshirtsPage";
 
 
 class HomePage {
@@ -225,6 +226,14 @@ class HomePage {
 
 		return new WomenTopsSubcategoryJacketsPage(this.page);
 	  }
+
+
+
+	async clickWomenTopsSubcategoryHoodiesSweatshirts() {
+	  await this.locators.getWomenTopsSubcategoryHoodiesSweatshirts().click();
+
+	  return new WomenHoodiesSweatshirtsPage(this.page);
+	}
 
 
 }
