@@ -1,8 +1,9 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
 import WomenTopsPage from "../page_objects/womenTopsPage";
-import { BASE_URL, WHATS_NEW_LINK_TEXT, WOMEN_LINK_TEXT, MEN_LINK_TEXT, GEAR_LINK_TEXT, TRAINING_LINK_TEXT, SALE_LINK_TEXT, WHATS_NEW_PAGE_HEADER_TEXT, WOMEN_PAGE_HEADER_TEXT, MEN_PAGE_HEADER_TEXT, GEAR_PAGE_HEADER_TEXT, TRAINING_PAGE_HEADER_TEXT, SALE_PAGE_HEADER_TEXT, WHATS_NEW_URL, WOMEN_URL, MEN_URL, GEAR_URL, TRAINING_URL, SALE_URL, NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT, NEW_LUMA_YOGA_COLLECTION_URL,NEW_LUMA_YOGA_COLLECTION_IB_HEADER_TEXT, NEW_LUMA_YOGA_COLLECTION_IB_CTA_TEXT, SHOP_NEW_YOGA_BTN_TEXT,WOMEN_CATAGORY_TOPS, WOMEN_TOPS_PAGE_URL, WOMEN_TOPS_SUBCATEGORY_JACKETS, WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS, WOMEN_TOPS_JACKETS_URL } from "../helpers/testDataHomePage";
+import { BASE_URL, WHATS_NEW_LINK_TEXT, WOMEN_LINK_TEXT, MEN_LINK_TEXT, GEAR_LINK_TEXT, TRAINING_LINK_TEXT, SALE_LINK_TEXT, WHATS_NEW_PAGE_HEADER_TEXT, WOMEN_PAGE_HEADER_TEXT, MEN_PAGE_HEADER_TEXT, GEAR_PAGE_HEADER_TEXT, TRAINING_PAGE_HEADER_TEXT, SALE_PAGE_HEADER_TEXT, WHATS_NEW_URL, WOMEN_URL, MEN_URL, GEAR_URL, TRAINING_URL, SALE_URL, NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT, NEW_LUMA_YOGA_COLLECTION_URL,NEW_LUMA_YOGA_COLLECTION_IB_HEADER_TEXT, NEW_LUMA_YOGA_COLLECTION_IB_CTA_TEXT, SHOP_NEW_YOGA_BTN_TEXT,WOMEN_CATAGORY_TOPS, WOMEN_TOPS_PAGE_URL, WOMEN_TOPS_SUBCATEGORY_JACKETS, WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS, WOMEN_TOPS_JACKETS_URL,  WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS_URL } from "../helpers/testDataHomePage";
 import WomenTopsSubcategoryJacketsPage from "../page_objects/WomenTopsSubcategoryJacketsPage";
+import WomenHoodiesSweatshirtsPage from "../page_objects/WomenHoodiesSweatshirtsPage";
 
 test.describe('homePage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -398,7 +399,7 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverMomenCategoryTops();
 		await homePage.clickWomenTopsSubcategoryJackets();
 		await expect(page).toHaveURL(WOMEN_TOPS_JACKETS_URL);
-		const womenJacketsPage = new WomenTopsSubcategoryJacketsPage();
+		const womenJacketsPage = new WomenTopsSubcategoryJacketsPage(page);
 
 	});
 
@@ -421,6 +422,18 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverWomenLink();
 		await homePage.hoverMomenCategoryTops();
 		await expect(homePage.locators.getWomenTopsSubcategoryHoodiesSweatshirts()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('03.1.124.1 Verify that the subcategory ""Hoodies & Sweatshirts" redirects to the appropriate page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await homePage.hoverMomenCategoryTops();
+		await homePage.clickWomenTopsSubcategoryHoodiesSweatshirts();
+		await expect(page).toHaveURL( WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS_URL);
+		const womenHoodiesSweatshirtsPage = new WomenHoodiesSweatshirtsPage(page);
 
 	});
 
