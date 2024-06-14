@@ -26,3 +26,4 @@ export const TRAINING_PAGE_HEADER_TEXT = 'Training';
 export const SALE_PAGE_HEADER_TEXT = 'Sale';
 export const NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT = 'New Luma Yoga Collection';
 export const NEW_LUMA_YOGA_COLLECTION_IB_HEADER_TEXT = 'New Luma Yoga Collection';
+export const NEW_LUMA_YOGA_COLLECTION_IB_CTA_TEXT = 'Get fit and look fab in new seasonal styles';
