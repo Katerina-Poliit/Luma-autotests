@@ -57,7 +57,8 @@ class HomePage {
 		getLumaYogaCollectionSection: () => this.page.getByRole('link', { name: 'New Luma Yoga Collection Get' }),
 		getLumaYogaCollectionSectionInfBlock: () => this.page.locator('.bg-white').first(),
 		getLumaYogaCollectionSectionInfBlockHeader: () => this.page.locator('.info').filter({ hasText: 'New Luma Yoga Collection' }),
-		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' })
+		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' }),
+		getShopNewYogaBtn: () => this.page.locator('.button')
 
 	};
 
