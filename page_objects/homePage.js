@@ -38,7 +38,15 @@ class HomePage {
 		getCartBtn: () => this.page.getByRole('link', { name: ' My Cart' }),
 		getOrsersReturnsLink: () => this.page.getByRole('link', { name: 'Orders and Returns' }),
       //----------------------------- Home page -----------------------------------------------------------
-		getBody: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3)
+		getBody: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3),
+		getWatsNewLink: () => this.page.getByRole('menuitem', { name: 'What\'s New' }),
+		getWomenLink: () => this.page.getByRole('menuitem', { name: 'Women' }),
+		getMenLink: () => this.page.getByRole('menuitem', { name: 'Men' }).last(),
+		getGearLink: () => this.page.getByRole('menuitem', { name: 'Gear' }),
+		getTrainingLink: () => this.page.getByRole('menuitem', { name: 'Training' }),
+		getSaleLink: () => this.page.getByRole('menuitem', { name: 'Sale' })
+
+
 	};
 
 	async open() {
