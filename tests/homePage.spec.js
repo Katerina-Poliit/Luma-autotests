@@ -207,4 +207,19 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.20 Verify that the "Sale" navigation menu link redirects to corresponding page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+	
+		await expect(page).toHaveURL(BASE_URL);
+	
+		const salePage = await homePage.clickSaleLink();
+	
+		await expect(page).toHaveURL(SALE_URL);
+		  
+		await expect(salePage.locators.getHeader()).toBeVisible();
+		await expect(salePage.locators.getHeader()).toHaveText(SALE_PAGE_HEADER_TEXT);
+	
+	});
+
 })
