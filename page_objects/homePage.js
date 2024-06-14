@@ -50,7 +50,8 @@ class HomePage {
 		getMenLink: () => this.page.getByRole('menuitem', { name: 'Men' }).last(),
 		getGearLink: () => this.page.getByRole('menuitem', { name: 'Gear' }),
 		getTrainingLink: () => this.page.getByRole('menuitem', { name: 'Training' }),
-		getSaleLink: () => this.page.getByRole('menuitem', { name: 'Sale' })
+		getSaleLink: () => this.page.getByRole('menuitem', { name: 'Sale' }),
+		getPromoBlock: () => this.page.locator('div').filter({ hasText: 'New Luma Yoga Collection Get' }).nth(3)
 
 
 	};
