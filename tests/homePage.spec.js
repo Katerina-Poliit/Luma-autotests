@@ -313,5 +313,18 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.31 Verify that the user is redirected to the "New Luma Yoga Collection" page after clicking on the "Shop New Yoga" button', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		const newLumaYogaCollectionSectionPage = await homePage.clickNewLumaYogaCollectionSection();
+
+		await expect(page).toHaveURL(NEW_LUMA_YOGA_COLLECTION_URL);
+
+		await expect(newLumaYogaCollectionSectionPage.locators.getHeader()).toBeVisible();
+		await expect(newLumaYogaCollectionSectionPage.locators.getHeader()).toHaveText(NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT);
+	
+	});
+
 
 })
