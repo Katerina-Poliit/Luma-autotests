@@ -12,6 +12,7 @@ import CustomerLoginPage from "./customerLoginPege";
 import SearchResultPageWithResults from "./searchResultPageWithResults";
 import WhatsNewPage from "./watsNewPage";
 import WomenPage from "./womenPage";
+import MenPage from "./menPage";
 
 
 class HomePage {
@@ -155,7 +156,11 @@ class HomePage {
 		return new WomenPage(this.page);
 	}
 
-}
+	async clickMenLink() {
+		await this.locators.getMenLink().click();
+		return new MenPage(this.page);
+	}
 
+}
 
 export default HomePage;

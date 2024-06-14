@@ -162,4 +162,19 @@ test.describe('homePage.spec', () => {
 	
 	});
 
+	test('ТС 03.1.17 Verify that the Men" navigation menu link redirects to corresponding page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+	
+		await expect(page).toHaveURL(BASE_URL);
+	
+		const menPage = await homePage.clickMenLink()
+	
+		await expect(page).toHaveURL(MEN_URL);
+		  
+		await expect(menPage.locators.getHeader()).toBeVisible();
+		await expect(menPage.locators.getHeader()).toHaveText(MEN_PAGE_HEADER_TEXT);
+	
+	});
+
 })
