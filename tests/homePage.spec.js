@@ -78,4 +78,58 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.9 Verify that the "What\'s New" navigation menu link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getWatsNewLink()).toBeVisible();
+		await expect(homePage.locators.getWatsNewLink()).toHaveCSS('cursor', 'pointer');
+	  
+	});
+
+	test('ТС 03.1.10 Verify that the "Women" navigation menu link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getWomenLink()).toBeVisible();
+		await expect(homePage.locators.getWomenLink()).toHaveCSS('cursor', 'pointer');
+	  
+	});
+
+	test('ТС 03.1.11 Verify that the "Men" navigation menu link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getMenLink()).toBeVisible();
+		await expect(homePage.locators.getMenLink()).toHaveCSS('cursor', 'pointer');
+	  
+	});
+
+	test('ТС 03.1.12 Verify that the "Gear" navigation menu link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getGearLink()).toBeVisible();
+		await expect(homePage.locators.getGearLink()).toHaveCSS('cursor', 'pointer');
+	  
+	});
+
+	test('ТС 03.1.12 Verify that the "Training" navigation menu link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getTrainingLink()).toBeVisible();
+		await expect(homePage.locators.getTrainingLink()).toHaveCSS('cursor', 'pointer');
+	  
+	});
+
+	test('ТС 03.1.13 Verify that the "Sale" navigation menu link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getSaleLink()).toBeVisible();
+		await expect(homePage.locators.getSaleLink()).toHaveCSS('cursor', 'pointer');
+	  
+	});
+
 })
