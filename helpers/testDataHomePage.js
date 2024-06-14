@@ -30,3 +30,4 @@ export const NEW_LUMA_YOGA_COLLECTION_IB_HEADER_TEXT = 'New Luma Yoga Collection
 export const NEW_LUMA_YOGA_COLLECTION_IB_CTA_TEXT = 'Get fit and look fab in new seasonal styles';
 export const SHOP_NEW_YOGA_BTN_TEXT = 'Shop New Yoga';
 export const WOMEN_CATAGORY_TOPS = 'Tops';
+export const WOMEN_TOPS_SUBCATEGORY_JACKETS = 'Jackets'
