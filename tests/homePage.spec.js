@@ -258,7 +258,14 @@ test.describe('homePage.spec', () => {
 		await expect(newLumaYogaCollectionSectionPage.locators.getHeader()).toBeVisible();
 		await expect(newLumaYogaCollectionSectionPage.locators.getHeader()).toHaveText(NEW_LUMA_YOGA_COLLECTION_HEADER_TEXT);
 	
+	});
 
+	test('ТС 03.1.25 Verify that the "New Luma Yoga Collection" promo sections has the information block', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getLumaYogaCollectionSectionInfBlock()).toBeVisible();
+	
 	});
 
 
