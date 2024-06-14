@@ -191,6 +191,11 @@ class HomePage {
 		return new NewLumaYogaCollectionSectionPage(this.page);
 	}
 
+	async getShopNewYogaBtn() {
+		await this.locators.getShopNewYogaBtn().click();
+		return new NewLumaYogaCollectionSectionPage(this.page);
+	}
+
 }
 
 export default HomePage;
