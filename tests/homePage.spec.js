@@ -346,5 +346,15 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.120 Verify that the "Tops" dropdown contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await expect(homePage.locators.getMomenCategoryTops()).toHaveCSS('cursor', 'pointer')
+
+
+	});
+
 
 })
