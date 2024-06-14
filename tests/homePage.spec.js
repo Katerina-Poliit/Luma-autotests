@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../page_objects/homePage";
-import { BASE_URL, WHATS_NEW_LINK_TEXT, WOMEN_LINK_TEXT, MEN_NEW_LINK_TEXT, GEAR_NEW_LINK_TEXT, TRAINING_NEW_LINK_TEXT, SALE_NEW_LINK_TEXT } from "../helpers/testDataHomePage";
+import { BASE_URL, WHATS_NEW_LINK_TEXT, WOMEN_LINK_TEXT, MEN_LINK_TEXT, GEAR_LINK_TEXT, TRAINING_LINK_TEXT, SALE_LINK_TEXT, WHATS_NEW_PAGE_HEADER_TEXT, WOMEN_PAGE_HEADER_TEXT, MEN_PAGE_HEADER_TEXT, GEAR_PAGE_HEADER_TEXT, TRAINING_PAGE_HEADER_TEXT, SALE_PAGE_HEADER_TEXT, WHATS_NEW_URL, WOMEN_URL, MEN_URL, GEAR_URL, TRAINING_URL, SALE_URL  } from "../helpers/testDataHomePage";
 
 test.describe('homePage.spec', () => {
 	test.beforeEach(async ({ page }) => {
@@ -47,7 +47,7 @@ test.describe('homePage.spec', () => {
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getMenLink()).toBeVisible();
-		await expect(homePage.locators.getMenLink()).toHaveText(MEN_NEW_LINK_TEXT);
+		await expect(homePage.locators.getMenLink()).toHaveText(MEN_LINK_TEXT);
 
 	});
 
@@ -56,7 +56,7 @@ test.describe('homePage.spec', () => {
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getGearLink()).toBeVisible();
-		await expect(homePage.locators.getGearLink()).toHaveText(GEAR_NEW_LINK_TEXT);
+		await expect(homePage.locators.getGearLink()).toHaveText(GEAR_LINK_TEXT);
 
 	});
 
@@ -65,7 +65,7 @@ test.describe('homePage.spec', () => {
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getTrainingLink()).toBeVisible();
-		await expect(homePage.locators.getTrainingLink()).toHaveText(TRAINING_NEW_LINK_TEXT);
+		await expect(homePage.locators.getTrainingLink()).toHaveText(TRAINING_LINK_TEXT);
 
 	});
 
@@ -74,7 +74,7 @@ test.describe('homePage.spec', () => {
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getSaleLink()).toBeVisible();
-		await expect(homePage.locators.getSaleLink()).toHaveText(SALE_NEW_LINK_TEXT);
+		await expect(homePage.locators.getSaleLink()).toHaveText(SALE_LINK_TEXT);
 
 	});
 
@@ -114,7 +114,7 @@ test.describe('homePage.spec', () => {
 	  
 	});
 
-	test('ТС 03.1.12 Verify that the "Training" navigation menu link has a cursor pointer', async ({ page }) => {
+	test('ТС 03.1.13 Verify that the "Training" navigation menu link has a cursor pointer', async ({ page }) => {
 
 		const homePage = new HomePage(page);
 
@@ -123,13 +123,29 @@ test.describe('homePage.spec', () => {
 	  
 	});
 
-	test('ТС 03.1.13 Verify that the "Sale" navigation menu link has a cursor pointer', async ({ page }) => {
+	test('ТС 03.1.14 Verify that the "Sale" navigation menu link has a cursor pointer', async ({ page }) => {
 
 		const homePage = new HomePage(page);
 
 		await expect(homePage.locators.getSaleLink()).toBeVisible();
 		await expect(homePage.locators.getSaleLink()).toHaveCSS('cursor', 'pointer');
 	  
+	});
+
+	test('ТС 03.1.15 Verify that the "What\'s New" navigation menu link redirects to corresponding page', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(page).toHaveURL(BASE_URL);
+
+		const whatsNewPage = await homePage.clickWatsNewLink();
+
+		await expect(page).toHaveURL(WHATS_NEW_URL);
+	  
+		await expect(whatsNewPage.locators.getHeader()).toBeVisible();
+		await expect(whatsNewPage.locators.getHeader()).toHaveText(WHATS_NEW_PAGE_HEADER_TEXT);
+
+	
 	});
 
 })

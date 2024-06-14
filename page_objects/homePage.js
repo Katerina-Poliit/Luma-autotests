@@ -10,6 +10,7 @@ import OrdersReturnsPage from "./ordersReturnsPage";
 import CreateNewCustomerAccountPage from "./createNewCustomerAccountPage";
 import CustomerLoginPage from "./customerLoginPege";
 import SearchResultPageWithResults from "./searchResultPageWithResults";
+import WhatsNewPage from "./watsNewPage";
 
 
 class HomePage {
@@ -141,6 +142,11 @@ class HomePage {
 	async clickOrsersReturnsLink() {
 		await this.locators.getOrsersReturnsLink().click();
 		return new OrdersReturnsPage(this.page);
+	}
+
+	async clickWatsNewLink() {
+		await this.locators.getWatsNewLink().click();
+		return new WhatsNewPage(this.page);
 	}
 
 }
