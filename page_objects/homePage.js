@@ -63,6 +63,7 @@ class HomePage {
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
 		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' }),
 		getWomenTopsSubcategoryJackets:() => this.page.locator('#ui-id-11'),
+		getWomenTopsSubcategoryHoodiesSweatshirts:() => this.page.locator('#ui-id-12'),
 
 	};
 
