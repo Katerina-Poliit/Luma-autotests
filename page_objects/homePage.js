@@ -22,6 +22,7 @@ import WomenTopsPage from "./womenTopsPage";
 import WomenTopsSubcategoryJacketsPage from "./WomenTopsSubcategoryJacketsPage";
 import WomenHoodiesSweatshirtsPage from "./WomenHoodiesSweatshirtsPage";
 import PantsPage from "./pantsPage";
+import WomenTeesPage from "./womenTeesPage";
 
 
 class HomePage {
@@ -256,6 +257,13 @@ class HomePage {
 		await this.locators.getShopPantsLink().click();
 
 		return new PantsPage(this.page);
+	}
+
+
+	async clickTopsSubcategoryTees() {
+		await this.locators.getTopsSubcategoryTees().click();
+
+		return new WomenTeesPage(this.page);
 	}
 
 

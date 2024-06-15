@@ -12,6 +12,8 @@ export const WOMEN_TOPS_PAGE_URL = 'https://magento.softwaretestingboard.com/wom
 export const WOMEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html';
 export const WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html'
 export const PANTS_URL = 'https://magento.softwaretestingboard.com/promotions/pants-all.html';
+export const WOMEN_TOPS_TEES_URL = 'https://magento.softwaretestingboard.com/women/tops-women/tees-women.html';
+
 
 //test data
 
@@ -42,4 +44,5 @@ export const SHOP_PANTS_LINK_TEXT = 'Shop Pants';
 export const HEADING_TOPS_TEXT = 'Tops';
 export const HEADING_JACKETS_TEXT = 'Jackets';
 export const HEADING_HOODIES_TEXT = 'Hoodies & Sweatshirts';
-export const WOMEN_TOPS_SUBCATEGORY_TEES_TEXT = 'Tees'
+export const WOMEN_TOPS_SUBCATEGORY_TEES_TEXT = 'Tees';
+export const HEADING_TEES_PAGE_TEXT = 'Tees';
