@@ -51,3 +51,4 @@ export const WOMEN_TOPS_SUBCATEGORY_BRAS_TANKS = 'Bras & Tanks';
 export const HEADING_BRASTANKS_PAGE_TEXT = 'Bras & Tanks';
 export const WOMEN_CATAGORY_BOTTOMS = 'Bottoms';
 export const HEADING_BOTTOMS_TEXT = 'Bottoms';
+export const WOMEN_BOTTOMS_SUBCATEGORY_PANTS_TEXT = 'Pants';
