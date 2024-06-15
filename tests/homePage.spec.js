@@ -765,6 +765,18 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.145 Verify that the "Jackets" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenTopsSubcategory();
+	    expect(homePage.locators.getMenTopsJackets()).toHaveCSS('cursor', 'pointer');
+
+
+	});
+
+
 
 
 
