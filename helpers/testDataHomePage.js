@@ -42,3 +42,4 @@ export const SHOP_PANTS_LINK_TEXT = 'Shop Pants';
 export const HEADING_TOPS_TEXT = 'Tops';
 export const HEADING_JACKETS_TEXT = 'Jackets';
 export const HEADING_HOODIES_TEXT = 'Hoodies & Sweatshirts';
+export const WOMEN_TOPS_SUBCATEGORY_TEES_TEXT = 'Tees'
