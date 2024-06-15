@@ -29,6 +29,7 @@ import WomenPanstPage from "./womenPantsPage";
 import WomenShortsPage from "./womenShortsPage";
 import MenTopsPage from "./menTopsPage";
 import MenJacketsPage from "./menJacketsPage";
+import MenHoddiesSweatshirtsPage from "./menHoddiesSweatshirtsPage";
 
 
 class HomePage {
@@ -341,6 +342,12 @@ class HomePage {
 		await this.locators.getMenTopsHoodiesSweatshirts().hover();
 
 		return this;
+	  }
+
+	  async clickMenTopsHoodiesSweatshirts() {
+		await this.locators.getMenTopsHoodiesSweatshirts().click();
+
+		return new MenHoddiesSweatshirtsPage(this.page);
 	  }
 
 
