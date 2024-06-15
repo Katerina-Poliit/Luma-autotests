@@ -245,8 +245,14 @@ class HomePage {
 	async click20OFFSection() {
 		await this.locators.get20OFFSection().click();
 
-		return new PantsPage(this.page);
- }
+		return new PantsPage(this.page);	
+	}
+
+	async clickShopPantsLink() {
+		await this.locators.getShopPantsLink().click();
+
+		return new PantsPage(this.page);	
+	}
 
 
 }
