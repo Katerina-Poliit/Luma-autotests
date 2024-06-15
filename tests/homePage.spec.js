@@ -708,7 +708,7 @@ test.describe('homePage.spec', () => {
 
 		await homePage.hoverMenDropdown();
 	    expect(homePage.locators.getMenDropdown()).toBeVisible();
-		expect(homePage.locators.getMenDropdown()).toHaveText(MEN_DROPDOWN_TEXT)
+		expect(homePage.locators.getMenDropdown()).toHaveText(MEN_DROPDOWN_TEXT);
 
 	});
 
