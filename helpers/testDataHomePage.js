@@ -61,3 +61,4 @@ export const HEADING_WOMEN_SHORTS_PAGE_TEXT = 'Shorts';
 export const MEN_DROPDOWN_TEXT = 'Men';
 export const MEN_CATAGORY_TOPS_TEXT = 'Tops';
 export const HEADING_MEN_TOPS_PAGE_TEXT ='Tops'
+export const MEN_TOPS_SUBCATEGORY_JACKETS = 'Jackets';
