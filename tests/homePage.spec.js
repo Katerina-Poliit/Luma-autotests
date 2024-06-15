@@ -614,4 +614,13 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.132 Verify that the "Bottoms" dropdown contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+	    expect(homePage.locators.getMomenCategoryBottoms()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 })
