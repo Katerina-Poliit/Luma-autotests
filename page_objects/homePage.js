@@ -24,6 +24,7 @@ import WomenHoodiesSweatshirtsPage from "./WomenHoodiesSweatshirtsPage";
 import PantsPage from "./pantsPage";
 import WomenTeesPage from "./womenTeesPage";
 import WomenBrassTanksPage from "./womenBrassTanksPage";
+import WomenBottomsPage from "./womenBottomsPage";
 
 
 class HomePage {
@@ -273,6 +274,12 @@ class HomePage {
 		await this.locators.getTopsSubcategoryBrassTanks().click();
 
 		return new WomenBrassTanksPage(this.page);
+	}
+
+	async clickMomenCategoryBottoms() {
+		await this.locators.getMomenCategoryBottoms().click();
+
+		return new WomenBottomsPage(this.page);
 	}
 
 
