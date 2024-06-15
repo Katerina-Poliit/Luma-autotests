@@ -90,6 +90,7 @@ class HomePage {
 		getWomenSubcategoryShorts:() => this.page.locator('#ui-id-16'),
 		getMenDropdown: () => this.page.getByRole('menuitem', { name: ' Men' }),
 		getMenTopsSubcategory: () => this.page.locator('#ui-id-17'),
+		getMenTopsJackets:() => this.page.locator('#ui-id-19'),
 
 
 
