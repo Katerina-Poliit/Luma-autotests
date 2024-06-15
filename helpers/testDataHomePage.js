@@ -37,3 +37,4 @@ export const WOMEN_TOPS_SUBCATEGORY_JACKETS = 'Jackets';
 export const WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS = 'Hoodies & Sweatshirts';
 export const PANTS_HEADER_TEXT = 'Pants';
 export const OFF_20_SECTION_HEADER_TEXT = '20% OFF';
+export const OFF_20_SECTION_CTA_TEXT = 'Luma pants when you shop today*';
