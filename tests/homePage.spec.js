@@ -338,7 +338,6 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverWomenLink();
 		await expect(homePage.locators.getWomenDropdown()).toBeTruthy();
 
-
 	});
 
 	test('ТС 03.1.119 Verify that the dropdown contains the "Tops" dropdown', async ({ page }) => {
@@ -348,7 +347,6 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverWomenLink();
 		await expect(homePage.locators.getMomenCategoryTops()).toHaveText(WOMEN_CATAGORY_TOPS);
 
-
 	});
 
 	test('ТС 03.1.120 Verify that the "Tops" dropdown contains a cursor pointer', async ({ page }) => {
@@ -357,7 +355,6 @@ test.describe('homePage.spec', () => {
 
 		await homePage.hoverWomenLink();
 		await expect(homePage.locators.getMomenCategoryTops()).toHaveCSS('cursor', 'pointer');
-
 
 	});
 
@@ -392,7 +389,6 @@ test.describe('homePage.spec', () => {
 
 	});
 
-
 	test('ТС 03.1.123.1 Verify that the subcategory "Jackets" redirects to the appropriate page ', async ({ page }) => {
 
 		const homePage = new HomePage(page);
@@ -404,7 +400,6 @@ test.describe('homePage.spec', () => {
 		const womenJacketsPage = new WomenTopsSubcategoryJacketsPage(page);
 
 	});
-
 
 	test('ТС 03.1.124 Verify that the "Tops" dropdown contains the "Hoddies & Sweatshirts" subcategory', async ({ page }) => {
 
@@ -519,6 +514,14 @@ test.describe('homePage.spec', () => {
 		await expect(page).toHaveURL(PANTS_URL);
 		await expect(pantsPage.locators.getHeader()).toBeVisible();
 		await expect(pantsPage.locators.getHeader()).toHaveText(PANTS_HEADER_TEXT);
+	});
+
+	test('ТС 03.1.41 Verify that the promo block contains "Even more ways to mix and match" promo section', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getEvenMoreSection()).toBeVisible();
+
 	});
 
 })
