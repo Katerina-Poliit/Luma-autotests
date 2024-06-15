@@ -79,6 +79,7 @@ class HomePage {
 		getWomenTopsSubcategoryJackets:() => this.page.locator('#ui-id-11'),
 		getWomenTopsSubcategoryHoodiesSweatshirts:() => this.page.locator('#ui-id-12'),
 		getTopsSubcategoryTees:() => this.page.locator('#ui-id-13'),
+		getTopsSubcategoryBrassTanks:() => this.page.locator('#ui-id-14'),
 
 
 	};
