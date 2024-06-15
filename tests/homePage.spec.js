@@ -502,4 +502,12 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.39 Verify that the "Shop pants" link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getShopPantsLink()).toBeVisible();
+		await expect(homePage.locators.getShopPantsLink()).toHaveCSS('cursor', 'pointer');
+	});
+
 })
