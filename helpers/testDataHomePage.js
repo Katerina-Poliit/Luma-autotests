@@ -57,4 +57,5 @@ export const WOMEN_BOTTOMS_SUBCATEGORY_PANTS_TEXT = 'Pants';
 export const HEADING_WOMEN_PANTS_PAGE_TEXT = 'Pants';
 export const WOMEN_BOTTOMS_SUBCATEGORY_SHORTS_TEXT = 'Shorts';
 export const HEADING_WOMEN_SHORTS_PAGE_TEXT = 'Shorts';
-export const MEN_DROPDOWN_TEXT = 'Men'
+export const MEN_DROPDOWN_TEXT = 'Men';
+export const MEN_CATAGORY_TOPS_TEXT = 'Tops';

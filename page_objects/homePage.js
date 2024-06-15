@@ -88,6 +88,7 @@ class HomePage {
 		getWomenSubcategoryPants:() => this.page.locator('#ui-id-15'),
 		getWomenSubcategoryShorts:() => this.page.locator('#ui-id-16'),
 		getMenDropdown: () => this.page.getByRole('menuitem', { name: ' Men' }),
+		getMenTopsSubcategory: () => this.page.locator('#ui-id-17'),
 
 
 
@@ -311,6 +312,12 @@ class HomePage {
 
 	async hoverMenDropdown() {
 		await this.locators.getMenDropdown().hover();
+
+		return this;
+	  }
+
+	  async hoverMenTopsSubcategory() {
+		await this.locators.getMenTopsSubcategory().hover();
 
 		return this;
 	  }
