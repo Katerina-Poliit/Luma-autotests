@@ -712,5 +712,15 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.140 Verify that the dropdown contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+	    expect(homePage.locators.getMenDropdown()).toHaveCSS('cursor', 'pointer');
+
+
+	});
+
 
 })
