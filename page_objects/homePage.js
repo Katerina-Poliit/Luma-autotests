@@ -62,10 +62,18 @@ class HomePage {
 		getLumaYogaCollectionSectionInfBlockHeader: () => this.page.locator('.info').filter({ hasText: 'New Luma Yoga Collection' }),
 		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' }),
 		getShopNewYogaBtn: () => this.page.locator('.button'),
+		get20OFFSection: () => this.page.getByRole('link', { name: '20% OFF Luma pants when you' }),
+
+
+
+
+
+
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
 		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' }),
 		getWomenTopsSubcategoryJackets:() => this.page.locator('#ui-id-11'),
 		getWomenTopsSubcategoryHoodiesSweatshirts:() => this.page.locator('#ui-id-12'),
+
 
 	};
 
