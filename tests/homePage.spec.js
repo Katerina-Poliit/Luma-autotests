@@ -467,4 +467,12 @@ test.describe('homePage.spec', () => {
 		await expect(pantsPage.locators.getHeader()).toHaveText(PANTS_HEADER_TEXT);
 	});
 
+	test('ТС 03.1.35 Verify that the "20% OFF" promo sections has the information block', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.get20OFFSectionInfBlock()).toBeVisible();
+
+	});
+
 })

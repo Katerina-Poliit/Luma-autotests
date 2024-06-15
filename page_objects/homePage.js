@@ -64,6 +64,7 @@ class HomePage {
 		getLumaYogaCollectionSectionInfBlockCTA: () => this.page.locator('.title').filter({ hasText: 'Get fit and look fab in new seasonal styles' }),
 		getShopNewYogaBtn: () => this.page.locator('.button'),
 		get20OFFSection: () => this.page.getByRole('link', { name: '20% OFF Luma pants when you' }),
+		get20OFFSectionInfBlock: () => this.page.locator('.home-pants .content'),
 
 
       //----------------------------- Kate -----------------------------------------------------------
