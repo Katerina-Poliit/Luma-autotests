@@ -5,6 +5,10 @@ class WomenTopsPage {
 
 	locators = {
 
+		getHeadingPage: () => this.page.locator('.page-title'),
+
+
+
 	}
 }
 
