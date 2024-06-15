@@ -548,4 +548,15 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.127 Verify that the "Tees" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await homePage.hoverMomenCategoryTops();
+	    expect(homePage.locators.getTopsSubcategoryTees()).toHaveCSS('cursor', 'pointer');
+
+
+	});
+
 })
