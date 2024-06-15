@@ -18,7 +18,8 @@ export const WOMEN_BOTTOMS_PAGE_URL = 'https://magento.softwaretestingboard.com/
 export const WOMEN_BOTTOMS_PANTS_PAGE_URL = 'https://magento.softwaretestingboard.com/women/bottoms-women/pants-women.html';
 export const WOMEN_SHORTS_PAGE_URL = 'https://magento.softwaretestingboard.com/women/bottoms-women/shorts-women.html';
 export const MEN_TOPS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men.html';
-export const MEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/jackets-men.html'
+export const MEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/jackets-men.html';
+export const MEN_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/hoodies-and-sweatshirts-men.html'
 
 //test data
 
