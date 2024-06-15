@@ -48,3 +48,4 @@ export const WOMEN_TOPS_SUBCATEGORY_TEES_TEXT = 'Tees';
 export const HEADING_TEES_PAGE_TEXT = 'Tees';
 export const WOMEN_TOPS_SUBCATEGORY_BRAS_TANKS = 'Bras & Tanks';
 export const HEADING_BRASTANKS_PAGE_TEXT = 'Bras & Tanks';
+export const WOMEN_CATAGORY_BOTTOMS = 'Bottoms'

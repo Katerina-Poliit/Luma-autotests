@@ -81,7 +81,7 @@ class HomePage {
 		getWomenTopsSubcategoryHoodiesSweatshirts:() => this.page.locator('#ui-id-12'),
 		getTopsSubcategoryTees:() => this.page.locator('#ui-id-13'),
 		getTopsSubcategoryBrassTanks:() => this.page.locator('#ui-id-14'),
-		
+		getMomenCategoryBottoms:() => this.page.getByRole('menuitem', { name: ' Bottoms' }),
 
 
 	};
