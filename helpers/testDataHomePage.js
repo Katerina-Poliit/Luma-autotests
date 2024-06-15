@@ -54,3 +54,4 @@ export const WOMEN_CATAGORY_BOTTOMS = 'Bottoms';
 export const HEADING_BOTTOMS_TEXT = 'Bottoms';
 export const WOMEN_BOTTOMS_SUBCATEGORY_PANTS_TEXT = 'Pants';
 export const HEADING_WOMEN_PANTS_PAGE_TEXT = 'Pants';
+export const WOMEN_BOTTOMS_SUBCATEGORY_SHORTS_TEXT = 'Shorts';
