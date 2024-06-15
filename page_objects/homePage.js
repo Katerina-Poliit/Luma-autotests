@@ -92,7 +92,7 @@ class HomePage {
 		getMenDropdown: () => this.page.getByRole('menuitem', { name: ' Men' }),
 		getMenTopsSubcategory: () => this.page.locator('#ui-id-17'),
 		getMenTopsJackets:() => this.page.locator('#ui-id-19'),
-
+		getMenTopsHoodiesSweatshirts:() => this.page.locator('#ui-id-20')
 
 
 	};
