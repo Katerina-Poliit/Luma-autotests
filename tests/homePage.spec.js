@@ -510,4 +510,15 @@ test.describe('homePage.spec', () => {
 		await expect(homePage.locators.getShopPantsLink()).toHaveCSS('cursor', 'pointer');
 	});
 
+	test('ТС 03.1.40 Verify that the user is redirected to the "Pants" page after clicking on the "Shop pants" link', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		const pantsPage = await homePage.clickShopPantsLink();
+
+		await expect(page).toHaveURL(PANTS_URL);
+		await expect(pantsPage.locators.getHeader()).toBeVisible();
+		await expect(pantsPage.locators.getHeader()).toHaveText(PANTS_HEADER_TEXT);
+	});
+
 })
