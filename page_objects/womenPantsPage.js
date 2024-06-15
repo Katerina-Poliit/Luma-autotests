@@ -4,7 +4,7 @@ class WomenPanstPage {
 	}
 
 	locators = {
-		getHeading: () => this.page.locator('#maincontent div').filter({ hasText: 'Bottoms' }),
+		getHeading: () => this.page. getByLabel('Items 1-12 of').getByText('Pants'),
 	}
 }
 

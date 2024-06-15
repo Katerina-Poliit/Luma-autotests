@@ -85,6 +85,7 @@ class HomePage {
 		getTopsSubcategoryBrassTanks:() => this.page.locator('#ui-id-14'),
 		getMomenCategoryBottoms:() => this.page.getByRole('menuitem', { name: ' Bottoms' }),
 		getWomenSubcategoryPants:() => this.page.locator('#ui-id-15'),
+		
 
 
 	};
