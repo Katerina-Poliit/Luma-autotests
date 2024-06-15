@@ -581,5 +581,15 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.129 Verify that the "Brass Tanks" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await homePage.hoverMomenCategoryTops();
+	    expect(homePage.locators.getTopsSubcategoryBrassTanks()).toHaveCSS('cursor', 'pointer');
+
+
+	});
 
 })
