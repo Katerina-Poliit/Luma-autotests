@@ -83,6 +83,7 @@ class HomePage {
 		getTopsSubcategoryTees:() => this.page.locator('#ui-id-13'),
 		getTopsSubcategoryBrassTanks:() => this.page.locator('#ui-id-14'),
 		getMomenCategoryBottoms:() => this.page.getByRole('menuitem', { name: ' Bottoms' }),
+		getWomenSubcategoryPants:() => this.page.locator('#ui-id-15'),
 
 
 	};
@@ -281,6 +282,12 @@ class HomePage {
 
 		return new WomenBottomsPage(this.page);
 	}
+
+	async hoverMomenCategoryBottoms() {
+		await this.locators.getMomenCategoryBottoms().hover();
+
+		return this;
+	  }
 
 
 
