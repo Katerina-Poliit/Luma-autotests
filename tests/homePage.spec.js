@@ -645,4 +645,13 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.135 Verify that the "Bottoms" dropdown contains the "Pants" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverWomenLink();
+		await homePage.hoverMomenCategoryBottoms()
+	    expect(homePage.locators.getWomenSubcategoryPants()).toHaveCSS('cursor', 'pointer');
+
+	});
 })
