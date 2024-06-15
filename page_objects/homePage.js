@@ -337,6 +337,11 @@ class HomePage {
 		return new MenJacketsPage(this.page);
 	  }
 
+	  async hovertMenTopsHoodiesSweatshirts() {
+		await this.locators.getMenTopsHoodiesSweatshirts().hover();
+
+		return this;
+	  }
 
 
 }

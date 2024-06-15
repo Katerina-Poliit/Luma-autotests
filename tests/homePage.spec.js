@@ -799,6 +799,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.147 Verify that the "Hoddies & Sweatshirts" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenTopsSubcategory();
+		await homePage.hovertMenTopsHoodiesSweatshirts()
+	    expect(homePage.locators.getMenTopsHoodiesSweatshirts()).toHaveCSS('cursor', 'pointer');
+
+	});
 
 
 
