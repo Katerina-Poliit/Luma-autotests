@@ -11,6 +11,7 @@ export const NEW_LUMA_YOGA_COLLECTION_URL = 'https://magento.softwaretestingboar
 export const WOMEN_TOPS_PAGE_URL = 'https://magento.softwaretestingboard.com/women/tops-women.html';
 export const WOMEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html';
 export const WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html'
+export const PANTS_URL = 'https://magento.softwaretestingboard.com/promotions/pants-all.html';
 
 //test data
 
@@ -33,4 +34,5 @@ export const NEW_LUMA_YOGA_COLLECTION_IB_CTA_TEXT = 'Get fit and look fab in new
 export const SHOP_NEW_YOGA_BTN_TEXT = 'Shop New Yoga';
 export const WOMEN_CATAGORY_TOPS = 'Tops';
 export const WOMEN_TOPS_SUBCATEGORY_JACKETS = 'Jackets';
-export const WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS = 'Hoodies & Sweatshirts'
+export const WOMEN_TOPS_SUBCATEGORY_HOODIESSWEATSHIRTS = 'Hoodies & Sweatshirts';
+export const PANTS_HEADER_TEXT = 'Pants';

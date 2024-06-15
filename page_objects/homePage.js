@@ -21,6 +21,7 @@ import NewLumaYogaCollectionSectionPage from "./newLumaYogaCollectionSectionPage
 import WomenTopsPage from "./womenTopsPage";
 import WomenTopsSubcategoryJacketsPage from "./WomenTopsSubcategoryJacketsPage";
 import WomenHoodiesSweatshirtsPage from "./WomenHoodiesSweatshirtsPage";
+import PantsPage from "./pantsPage";
 
 
 class HomePage {
@@ -65,10 +66,7 @@ class HomePage {
 		get20OFFSection: () => this.page.getByRole('link', { name: '20% OFF Luma pants when you' }),
 
 
-
-
-
-
+      //----------------------------- Kate -----------------------------------------------------------
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
 		getMomenCategoryTops:() => this.page.getByRole('menuitem', { name: ' Tops' }),
 		getWomenTopsSubcategoryJackets:() => this.page.locator('#ui-id-11'),
@@ -217,31 +215,35 @@ class HomePage {
 		return this;
 	  }
 
-	  async clickMomenCategoryTops() {
+	async clickMomenCategoryTops() {
 		await this.locators.getMomenCategoryTops().click();
 
 		return new WomenTopsPage(this.page);
 	  }
 
-	  async hoverMomenCategoryTops() {
+	async hoverMomenCategoryTops() {
 		await this.locators.getMomenCategoryTops().hover();
 
 		return this;
 	  }
 
-	  async clickWomenTopsSubcategoryJackets() {
+	async clickWomenTopsSubcategoryJackets() {
 		await this.locators.getWomenTopsSubcategoryJackets().click();
 
 		return new WomenTopsSubcategoryJacketsPage(this.page);
 	  }
 
-
-
 	async clickWomenTopsSubcategoryHoodiesSweatshirts() {
-	  await this.locators.getWomenTopsSubcategoryHoodiesSweatshirts().click();
+	  	await this.locators.getWomenTopsSubcategoryHoodiesSweatshirts().click();
 
-	  return new WomenHoodiesSweatshirtsPage(this.page);
+	  	return new WomenHoodiesSweatshirtsPage(this.page);
 	}
+
+	async click20OFFSection() {
+		await this.locators.get20OFFSection().click();
+
+		return new PantsPage(this.page);
+ }
 
 
 }
