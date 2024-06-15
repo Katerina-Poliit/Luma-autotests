@@ -4,7 +4,8 @@ class WomenHoodiesSweatshirtsPage {
 	}
 
 	locators = {
-		getHeader: () => this.page.getByLabel('Training').getByText('Training')
+		getHeader: () => this.page.getByLabel('Training').getByText('Training'),
+		getHeadingPage: () => this.page.locator('.page-title'),
 	}
 }
 

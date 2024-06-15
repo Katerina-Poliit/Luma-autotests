@@ -39,3 +39,6 @@ export const PANTS_HEADER_TEXT = 'Pants';
 export const OFF_20_SECTION_HEADER_TEXT = '20% OFF';
 export const OFF_20_SECTION_CTA_TEXT = 'Luma pants when you shop today*';
 export const SHOP_PANTS_LINK_TEXT = 'Shop Pants';
+export const HEADING_TOPS_TEXT = 'Tops';
+export const HEADING_JACKETS_TEXT = 'Jackets';
+export const HEADING_HOODIES_TEXT = 'Hoodies & Sweatshirts';

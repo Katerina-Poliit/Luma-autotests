@@ -5,6 +5,8 @@ class WomenTopsSubcategoryJacketsPage {
 
 	locators = {
 
+		getHeadingJacketsPage: () => this.page.locator('.page-title'),
+
 	}
 }
 
