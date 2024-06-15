@@ -27,6 +27,7 @@ import WomenBrassTanksPage from "./womenBrassTanksPage";
 import WomenBottomsPage from "./womenBottomsPage";
 import WomenPanstPage from "./womenPantsPage";
 import WomenShortsPage from "./womenShortsPage";
+import MenTopsPage from "./menTopsPage";
 
 
 class HomePage {
@@ -320,6 +321,12 @@ class HomePage {
 		await this.locators.getMenTopsSubcategory().hover();
 
 		return this;
+	  }
+
+	  async clickMenTopsSubcategory() {
+		await this.locators.getMenTopsSubcategory().click();
+
+		return new MenTopsPage(this.page);
 	  }
 
 
