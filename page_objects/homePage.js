@@ -23,6 +23,7 @@ import WomenTopsSubcategoryJacketsPage from "./WomenTopsSubcategoryJacketsPage";
 import WomenHoodiesSweatshirtsPage from "./WomenHoodiesSweatshirtsPage";
 import PantsPage from "./pantsPage";
 import WomenTeesPage from "./womenTeesPage";
+import WomenBrassTanksPage from "./womenBrassTanksPage";
 
 
 class HomePage {
@@ -80,6 +81,7 @@ class HomePage {
 		getWomenTopsSubcategoryHoodiesSweatshirts:() => this.page.locator('#ui-id-12'),
 		getTopsSubcategoryTees:() => this.page.locator('#ui-id-13'),
 		getTopsSubcategoryBrassTanks:() => this.page.locator('#ui-id-14'),
+		
 
 
 	};
@@ -266,6 +268,13 @@ class HomePage {
 
 		return new WomenTeesPage(this.page);
 	}
+
+	async clickTopsSubcategoryBrassTanks() {
+		await this.locators.getTopsSubcategoryBrassTanks().click();
+
+		return new WomenBrassTanksPage(this.page);
+	}
+
 
 
 }
