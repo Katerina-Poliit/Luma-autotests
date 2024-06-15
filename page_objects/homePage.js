@@ -68,6 +68,9 @@ class HomePage {
 		get20OFFSectionInfBlockHeader: () => this.page.locator('.title').filter({ hasText: '20% OFF' }),
 		get20OFFSectionInfBlockCTA: () => this.page.locator('.info').filter({ hasText: 'Luma pants when you shop today*' }),
 		getShopPantsLink: () => this.page.locator('.icon').filter({ hasText: 'Shop Pants' }),
+		getEvenMoreSection: () => this.page.getByRole('link', { name: 'Even more ways to mix and' }),
+
+
 
       //----------------------------- Kate -----------------------------------------------------------
 		getWomenDropdown: () => this.page.locator('.nav-2 > ul > li > a'),
