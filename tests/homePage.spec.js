@@ -744,6 +744,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.142 Verify that the "Tops" dropdown contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage. hoverMenTopsSubcategory();
+	    expect(homePage.locators.getMenTopsSubcategory()).toHaveCSS('cursor', 'pointer');
+		
+	});
+
 
 
 })
