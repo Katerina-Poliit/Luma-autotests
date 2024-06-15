@@ -65,6 +65,7 @@ class HomePage {
 		getShopNewYogaBtn: () => this.page.locator('.button'),
 		get20OFFSection: () => this.page.getByRole('link', { name: '20% OFF Luma pants when you' }),
 		get20OFFSectionInfBlock: () => this.page.locator('.home-pants .content'),
+		get20OFFSectionInfBlockHeader: () => this.page.locator('.title').filter({ hasText: '20% OFF' }),
 
 
       //----------------------------- Kate -----------------------------------------------------------
