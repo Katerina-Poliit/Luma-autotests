@@ -22,6 +22,7 @@ export const MEN_TOPS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/t
 export const MEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/jackets-men.html';
 export const MEN_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/hoodies-and-sweatshirts-men.html';
 export const MEN_TOPS_TESS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tees-men.html';
+export const MEN_TOPS_TANKS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tanks-men.html'
 
 
 //test data
@@ -75,3 +76,4 @@ export const MEN_TOPS_SUBCATEGORY_JACKETS = 'Jackets';
 export const MEN_TOPS_HOODIESSWEATSHIRTS_TEXT = 'Hoodies & Sweatshirts';
 export const MEN_TOPS_TEES_TEXT = 'Tees';
 export const MEN_TOPS_SUBCATEGORY_TANKS_TEXT = 'Tanks';
+export const HEADING_MEN_TANKS_PAGE_TEXT ='Tanks'
