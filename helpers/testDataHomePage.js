@@ -78,3 +78,4 @@ export const MEN_TOPS_TEES_TEXT = 'Tees';
 export const MEN_TOPS_SUBCATEGORY_TANKS_TEXT = 'Tanks';
 export const HEADING_MEN_TANKS_PAGE_TEXT ='Tanks';
 export const MEN_CATAGORY_BOTTOMS = 'Bottoms';
+export const MEN_BOTTOMS_SUBCATEGORY_PANTS_TEXT = 'Pants';
