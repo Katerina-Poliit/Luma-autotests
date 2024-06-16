@@ -78,6 +78,7 @@ class HomePage {
 		get20OFFSectionInfBlockCTA: () => this.page.locator('.info').filter({ hasText: 'Luma pants when you shop today*' }),
 		getShopPantsLink: () => this.page.locator('.icon').filter({ hasText: 'Shop Pants' }),
 		getEvenMoreSection: () => this.page.getByRole('link', { name: 'Even more ways to mix and' }),
+		getEvenMoreSectionInfBlock: () => this.page.locator('.home-t-shirts .content'),
 
 
 
