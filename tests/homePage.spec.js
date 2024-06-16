@@ -887,4 +887,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.49 Verify that the user is redirected to the "Tees" page after clicking on the "Shop Tees" link', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		const teesPage = await homePage.clickShopTeesLink();
+
+		await expect(page).toHaveURL(TEES_URL);
+		await expect(teesPage.locators.getHeader()).toBeVisible();
+		await expect(teesPage.locators.getHeader()).toHaveText(TEES_HEADER_TEXT);
+		
+	});
+
 })
