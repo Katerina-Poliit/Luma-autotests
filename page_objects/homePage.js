@@ -37,6 +37,7 @@ import MenBottomsPage from "./menBottomsPage";
 import MenBottomsPantsPage from "./menBottomsPantsPage";
 import MenBottomsShortsPage from "./menBottomsShortsPage";
 import GearBagsPage from "./gearBagsPage";
+import GearFitnessEquipmentPage from "./gearFitnessEquipmentPage";
 
 
 class HomePage {
@@ -464,6 +465,12 @@ class HomePage {
 		await this.locators.getGearFitnessEquipment().hover();
 
 		return this;
+	}
+
+	async clickGearFitnessEquipment() {
+		await this.locators.getGearFitnessEquipment().click();
+
+		return new GearFitnessEquipmentPage (this.page);
 	}
 
 
