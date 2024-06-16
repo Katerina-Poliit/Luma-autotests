@@ -79,7 +79,7 @@ class HomePage {
 		getShopPantsLink: () => this.page.locator('.icon').filter({ hasText: 'Shop Pants' }),
 		getEvenMoreSection: () => this.page.getByRole('link', { name: 'Even more ways to mix and' }),
 		getEvenMoreSectionInfBlock: () => this.page.locator('.home-t-shirts .content'),
-
+		getEvenMoreSectionInfBlockHeader: () => this.page.locator('.title').filter({ hasText: 'Even more ways to mix and match' }),
 
 
       //----------------------------- Kate -----------------------------------------------------------
