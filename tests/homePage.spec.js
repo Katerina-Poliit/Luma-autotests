@@ -950,7 +950,16 @@ test.describe('homePage.spec', () => {
 		expect(homePage.locators.getMenTopsTanks()).toBeVisible();
 		expect(homePage.locators.getMenTopsTanks()).toHaveText(MEN_TOPS_SUBCATEGORY_TANKS_TEXT);
 
-	    // expect(homePage.locators.getMenTopsTanks()).toHaveCSS('cursor', 'pointer');
+	});
+
+	test('ТС 03.1.151 Verify that the "Tops" dropdown contains the "Brass Tanks" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenTopsSubcategory();
+		await homePage.hoverMenTopsTanks();
+        expect(homePage.locators.getMenTopsTanks()).toHaveCSS('cursor', 'pointer');
 
 	});
 
