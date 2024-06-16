@@ -103,6 +103,7 @@ class HomePage {
 		getMenTopsHoodiesSweatshirts:() => this.page.locator('#ui-id-20'),
 		getMenTopsTees:() => this.page.locator('#ui-id-21'),
 		getMenTopsTanks:() => this.page.locator('#ui-id-22'),
+		getMenCategoryBottoms:() => this.page.locator('#ui-id-18'),
 
 
 	};
@@ -392,6 +393,12 @@ class HomePage {
 		await this.locators.getMenTopsTanks().click();
 
 		return new MenTopsTanksPage(this.page);
+	}
+
+	async hoverMenCategoryBottoms() {
+		await this.locators.getMenCategoryBottoms().hover();
+
+		return this;
 	}
 
 
