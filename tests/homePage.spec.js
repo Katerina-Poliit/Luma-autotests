@@ -1042,6 +1042,18 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.158 Verify that the "Bottoms" dropdown contains the "Shorts" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenCategoryBottoms();
+		await homePage.hoverMenBottomsShorts();
+		expect(homePage.locators.getMenBottomsShorts()).toBeVisible();
+
+
+	});
+
 
 
 })
