@@ -81,7 +81,7 @@ class HomePage {
 		getEvenMoreSectionInfBlock: () => this.page.locator('.home-t-shirts .content'),
 		getEvenMoreSectionInfBlockHeader: () => this.page.locator('.title').filter({ hasText: 'Even more ways to mix and match' }),
 		getEvenMoreSectionInfBlockCTA: () => this.page.locator('.info').filter({ hasText: 'Buy 3 Luma tees get a 4th free' }),
-
+		getShopTeesLink: () => this.page.locator('.icon').filter({ hasText: 'Shop Tees' }),
 
 
       //----------------------------- Kate -----------------------------------------------------------
