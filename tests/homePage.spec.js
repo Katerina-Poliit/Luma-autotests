@@ -1086,6 +1086,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.162 Verify that the dropdown contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		expect(homePage.locators.getGearLink()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+
 
 
 
