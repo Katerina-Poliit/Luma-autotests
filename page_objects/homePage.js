@@ -45,6 +45,7 @@ class HomePage {
 	constructor(page) {
 		this.page = page;
 
+
 	}
 
 	locators = {
@@ -117,6 +118,9 @@ class HomePage {
 		getGearBags:() => this.page.locator('#ui-id-25'),
 		getGearFitnessEquipment:() => this.page.locator('#ui-id-26'),
 		getGearWatches:() => this.page.locator('#ui-id-27'),
+		trainingVideoDownloading:() => this.page.locator('#ui-id-28'),
+
+
 
 
 
@@ -486,6 +490,19 @@ class HomePage {
 
 		return new GearWatchesPage (this.page);
 	}
+
+	async hoverTrainingLink() {
+		await this.locators.getTrainingLink().hover();
+
+		return this;
+	}
+
+	async hovertrainingVideoDownloading() {
+		await this.locators.trainingVideoDownloading().hover();
+
+		return this;
+	}
+
 
 
 }
