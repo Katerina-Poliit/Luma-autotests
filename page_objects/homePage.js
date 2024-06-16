@@ -107,6 +107,7 @@ class HomePage {
 		getMenTopsTanks:() => this.page.locator('#ui-id-22'),
 		getMenCategoryBottoms:() => this.page.locator('#ui-id-18'),
 		getMenBottomsPants:() => this.page.locator('#ui-id-23'),
+		getMenBottomsShorts:() => this.page.locator('#ui-id-24'),
 
 
 	};
@@ -420,6 +421,12 @@ class HomePage {
 		await this.locators.getMenBottomsPants().click();
 
 		return new MenBottomsPantsPage(this.page);
+	}
+
+	async hoverMenBottomsShorts() {
+		await this.locators.getMenBottomsShorts().hover();
+
+		return this;
 	}
 
 
