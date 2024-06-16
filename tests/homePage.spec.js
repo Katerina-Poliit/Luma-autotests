@@ -1054,6 +1054,18 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.159 Verify that the "Shorts" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenCategoryBottoms();
+		await homePage.hoverMenBottomsShorts();
+		expect(homePage.locators.getMenBottomsShorts()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+
 
 
 })
