@@ -907,4 +907,13 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.51 Verify that the "Take it from Erin" promo section has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getTakeItFromErinSection()).toBeVisible();
+		await expect(homePage.locators.getTakeItFromErinSection()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 })
