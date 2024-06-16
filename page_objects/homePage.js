@@ -82,6 +82,7 @@ class HomePage {
 		getEvenMoreSectionInfBlockHeader: () => this.page.locator('.title').filter({ hasText: 'Even more ways to mix and match' }),
 		getEvenMoreSectionInfBlockCTA: () => this.page.locator('.info').filter({ hasText: 'Buy 3 Luma tees get a 4th free' }),
 		getShopTeesLink: () => this.page.locator('.icon').filter({ hasText: 'Shop Tees' }),
+		getTakeItFromErinSection: () => this.page.getByRole('link', { name: 'Take it from Erin Luma' }),
 
 
       //----------------------------- Kate -----------------------------------------------------------
