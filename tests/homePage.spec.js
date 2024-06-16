@@ -1095,6 +1095,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.163 Verify that the dropdown contains the "Bags" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		await homePage.hoverGearBags()
+		expect(homePage.locators.getGearBags()).toBeVisible();
+
+	});
+
 
 
 
