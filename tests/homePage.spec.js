@@ -1169,6 +1169,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.170 Verify that the "Watches" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		await homePage.hoverGearWatches();
+		await expect(homePage.locators.getGearWatches()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 
 
 
