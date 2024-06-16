@@ -360,6 +360,12 @@ class HomePage {
 		return new TeesPage(this.page);
 	}
 
+	async clickShopTeesLink() {
+		await this.locators.getShopTeesLink().click();
+
+		return new TeesPage(this.page);
+	}
+
 
 }
 
