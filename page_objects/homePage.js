@@ -35,6 +35,7 @@ import MenTopsTeesPage from "./menTopsTeesPage";
 import MenTopsTanksPage from "./menTopsTanksPage";
 import MenBottomsPage from "./menBottomsPage";
 import MenBottomsPantsPage from "./menBottomsPantsPage";
+import MenBottomsShortsPage from "./menBottomsShortsPage";
 
 
 class HomePage {
@@ -427,6 +428,12 @@ class HomePage {
 		await this.locators.getMenBottomsShorts().hover();
 
 		return this;
+	}
+
+	async clickMenBottomsShorts() {
+		await this.locators.getMenBottomsShorts().click();
+
+		return new MenBottomsShortsPage(this.page);
 	}
 
 
