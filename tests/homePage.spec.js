@@ -1077,6 +1077,15 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.161 Verify that the "Gear" navigation menu link contains the dropdown', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		expect(homePage.locators.getGearLink()).toBeVisible();
+
+	});
+
 
 
 
