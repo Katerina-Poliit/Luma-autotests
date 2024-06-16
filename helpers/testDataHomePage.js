@@ -22,8 +22,9 @@ export const MEN_TOPS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/t
 export const MEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/jackets-men.html';
 export const MEN_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/hoodies-and-sweatshirts-men.html';
 export const MEN_TOPS_TESS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tees-men.html';
-export const MEN_TOPS_TANKS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tanks-men.html'
-export const MEN_BOTTOMS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/bottoms-men.html'
+export const MEN_TOPS_TANKS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tanks-men.html';
+export const MEN_BOTTOMS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/bottoms-men.html';
+export const MEN_BOTTOMS_PANTS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/bottoms-men/pants-men.html';
 
 //test data
 
@@ -79,3 +80,4 @@ export const MEN_TOPS_SUBCATEGORY_TANKS_TEXT = 'Tanks';
 export const HEADING_MEN_TANKS_PAGE_TEXT ='Tanks';
 export const MEN_CATAGORY_BOTTOMS = 'Bottoms';
 export const MEN_BOTTOMS_SUBCATEGORY_PANTS_TEXT = 'Pants';
+export const HEADING_MEN_BOTTOMS_PANTS_TEXT = 'Pants';
