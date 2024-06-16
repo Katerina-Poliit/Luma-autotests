@@ -38,6 +38,7 @@ import MenBottomsPantsPage from "./menBottomsPantsPage";
 import MenBottomsShortsPage from "./menBottomsShortsPage";
 import GearBagsPage from "./gearBagsPage";
 import GearFitnessEquipmentPage from "./gearFitnessEquipmentPage";
+import GearWatchesPage from "./gearWatchesPage";
 
 
 class HomePage {
@@ -478,6 +479,12 @@ class HomePage {
 		await this.locators.getGearWatches().hover();
 
 		return this;
+	}
+
+	async clickGearWatches() {
+		await this.locators.getGearWatches().click();
+
+		return new GearWatchesPage (this.page);
 	}
 
 
