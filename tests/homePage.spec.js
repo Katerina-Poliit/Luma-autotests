@@ -1019,6 +1019,17 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.157 Verify that the "Pants" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenCategoryBottoms();
+		await homePage.hoverMenBottomsPants();
+		expect(homePage.locators.getMenBottomsPants()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 
 
 })
