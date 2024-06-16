@@ -23,7 +23,7 @@ export const MEN_TOPS_JACKETS_URL = 'https://magento.softwaretestingboard.com/me
 export const MEN_HOODIESSWEATSHIRTS_URL = 'https://magento.softwaretestingboard.com/men/tops-men/hoodies-and-sweatshirts-men.html';
 export const MEN_TOPS_TESS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tees-men.html';
 export const MEN_TOPS_TANKS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/tops-men/tanks-men.html'
-
+export const MEN_BOTTOMS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/bottoms-men.html'
 
 //test data
 

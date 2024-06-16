@@ -33,6 +33,7 @@ import MenHoddiesSweatshirtsPage from "./menHoddiesSweatshirtsPage";
 import TeesPage from "./teesPage";
 import MenTopsTeesPage from "./menTopsTeesPage";
 import MenTopsTanksPage from "./menTopsTanksPage";
+import MenBottomsPage from "./menBottomsPage";
 
 
 class HomePage {
@@ -399,6 +400,12 @@ class HomePage {
 		await this.locators.getMenCategoryBottoms().hover();
 
 		return this;
+	}
+
+	async clickMenCategoryBottoms() {
+		await this.locators.getMenCategoryBottoms().click();
+
+		return new MenBottomsPage(this.page);
 	}
 
 
