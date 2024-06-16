@@ -899,4 +899,12 @@ test.describe('homePage.spec', () => {
 		
 	});
 
+	test('ТС 03.1.50 Verify that the promo block contains "Take it from Erin" promo section', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getTakeItFromErinSection()).toBeVisible();
+
+	});
+
 })
