@@ -367,6 +367,12 @@ class HomePage {
 		return new TeesPage(this.page);
 	}
 
+	async hoverMenTopsTees() {
+		await this.locators.getMenTopsTees().hover();
+
+		return this;
+	}
+
 
 }
 

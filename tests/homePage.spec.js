@@ -840,7 +840,7 @@ test.describe('homePage.spec', () => {
 		await expect(page).toHaveURL(TEES_URL);
 		await expect(teesPage.locators.getHeader()).toBeVisible();
 		await expect(teesPage.locators.getHeader()).toHaveText(TEES_HEADER_TEXT);
-		
+
 	});
 
 	test('ТС 03.1.44 Verify that the "Even more ways to mix and match" promo sections has the information block', async ({ page }) => {
@@ -896,7 +896,7 @@ test.describe('homePage.spec', () => {
 		await expect(page).toHaveURL(TEES_URL);
 		await expect(teesPage.locators.getHeader()).toBeVisible();
 		await expect(teesPage.locators.getHeader()).toHaveText(TEES_HEADER_TEXT);
-		
+
 	});
 
 	test('ТС 03.1.50 Verify that the promo block contains "Take it from Erin" promo section', async ({ page }) => {
@@ -913,6 +913,17 @@ test.describe('homePage.spec', () => {
 
 		await expect(homePage.locators.getTakeItFromErinSection()).toBeVisible();
 		await expect(homePage.locators.getTakeItFromErinSection()).toHaveCSS('cursor', 'pointer');
+
+	});
+
+	test('ТС 03.1.149 Verify that the "Tees" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverMenDropdown();
+		await homePage.hoverMenTopsSubcategory();
+		await homePage.hoverMenTopsTees()
+	    expect(homePage.locators.getMenTopsTees()).toHaveCSS('cursor', 'pointer');
 
 	});
 
