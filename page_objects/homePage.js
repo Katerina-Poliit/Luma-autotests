@@ -36,11 +36,13 @@ import MenTopsTanksPage from "./menTopsTanksPage";
 import MenBottomsPage from "./menBottomsPage";
 import MenBottomsPantsPage from "./menBottomsPantsPage";
 import MenBottomsShortsPage from "./menBottomsShortsPage";
+import GearBagsPage from "./gearBagsPage";
 
 
 class HomePage {
 	constructor(page) {
 		this.page = page;
+
 	}
 
 	locators = {
@@ -109,6 +111,7 @@ class HomePage {
 		getMenCategoryBottoms:() => this.page.locator('#ui-id-18'),
 		getMenBottomsPants:() => this.page.locator('#ui-id-23'),
 		getMenBottomsShorts:() => this.page.locator('#ui-id-24'),
+		getGearBags:() => this.page.locator('#ui-id-25'),
 		getGearBags:() => this.page.locator('#ui-id-25'),
 
 
@@ -448,6 +451,12 @@ class HomePage {
 		await this.locators.getGearBags().hover();
 
 		return this;
+	}
+
+	async clickGearBags() {
+		await this.locators.getGearBags().click();
+
+		return new GearBagsPage(this.page);
 	}
 
 
