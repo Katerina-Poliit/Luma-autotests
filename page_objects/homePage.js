@@ -113,6 +113,7 @@ class HomePage {
 		getMenBottomsShorts:() => this.page.locator('#ui-id-24'),
 		getGearBags:() => this.page.locator('#ui-id-25'),
 		getGearBags:() => this.page.locator('#ui-id-25'),
+		getGearFitnessEquipment:() => this.page.locator('#ui-id-26'),
 
 
 
@@ -457,6 +458,12 @@ class HomePage {
 		await this.locators.getGearBags().click();
 
 		return new GearBagsPage(this.page);
+	}
+
+	async hoverGearFitnessEquipment() {
+		await this.locators.getGearFitnessEquipment().hover();
+
+		return this;
 	}
 
 

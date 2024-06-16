@@ -1126,6 +1126,17 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.166 Verify that the dropdown contains the "Fitness Equipment" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		await homePage.hoverGearFitnessEquipment();
+		await expect(homePage.locators.getGearFitnessEquipment()).toBeVisible();
+
+
+	});
+
 
 
 
