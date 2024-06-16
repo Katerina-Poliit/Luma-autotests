@@ -1137,6 +1137,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.167 Verify that the "Fitness Equipment" subcategory contains a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		await homePage.hoverGearFitnessEquipment();
+		await expect(homePage.locators.getGearFitnessEquipment()).toHaveCSS('cursor', 'pointer');
+
+	});
+
 
 
 
