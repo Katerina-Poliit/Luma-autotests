@@ -769,7 +769,7 @@ test.describe('homePage.spec', () => {
 
 		await homePage.hoverMenDropdown();
 		await homePage.hoverMenTopsSubcategory();
-	    expect(homePage.locators.getMenTopsJackets()).toHaveCSS('cursor', 'pointer');
+	   expect(homePage.locators.getMenTopsJackets()).toHaveCSS('cursor', 'pointer');
 
 
 	});
@@ -780,7 +780,7 @@ test.describe('homePage.spec', () => {
 
 		await homePage.hoverMenDropdown();
 		await homePage.hoverMenTopsSubcategory();
-	    const menJacktsPage = await homePage.clickMenTopsJackets();
+	   const menJacktsPage = await homePage.clickMenTopsJackets();
 		await expect(page).toHaveURL(MEN_TOPS_JACKETS_URL);
 		await expect(menJacktsPage.locators.getHeader()).toHaveText(HEADING_JACKETS_TEXT);
 
@@ -792,7 +792,7 @@ test.describe('homePage.spec', () => {
 
 		await homePage.hoverMenDropdown();
 		await homePage.hoverMenTopsSubcategory();
-	    expect(homePage.locators.getMenTopsHoodiesSweatshirts()).toBeVisible();
+	   expect(homePage.locators.getMenTopsHoodiesSweatshirts()).toBeVisible();
 		expect(homePage.locators.getMenTopsHoodiesSweatshirts()).toHaveText(MEN_TOPS_HOODIESSWEATSHIRTS_TEXT);
 
 	});
@@ -804,7 +804,7 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverMenDropdown();
 		await homePage.hoverMenTopsSubcategory();
 		await homePage.hovertMenTopsHoodiesSweatshirts()
-	    expect(homePage.locators.getMenTopsHoodiesSweatshirts()).toHaveCSS('cursor', 'pointer');
+	   expect(homePage.locators.getMenTopsHoodiesSweatshirts()).toHaveCSS('cursor', 'pointer');
 
 	});
 
@@ -875,6 +875,15 @@ test.describe('homePage.spec', () => {
 
 		await expect(homePage.locators.getShopTeesLink()).toBeVisible();
 		await expect(homePage.locators.getShopTeesLink()).toHaveText(SHOP_TEES_LINK_TEXT);
+
+	});
+
+	test('ТС 03.1.48 Verify that the "Shop Tees" link has a cursor pointer', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await expect(homePage.locators.getShopTeesLink()).toBeVisible();
+		await expect(homePage.locators.getShopTeesLink()).toHaveCSS('cursor', 'pointer');
 
 	});
 
