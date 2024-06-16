@@ -111,6 +111,7 @@ class HomePage {
 		getMenBottomsShorts:() => this.page.locator('#ui-id-24'),
 
 
+
 	};
 
 	async open() {
@@ -434,6 +435,12 @@ class HomePage {
 		await this.locators.getMenBottomsShorts().click();
 
 		return new MenBottomsShortsPage(this.page);
+	}
+
+	async hoverGearLink() {
+		await this.locators.getGearLink().hover();
+
+		return this;
 	}
 
 
