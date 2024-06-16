@@ -115,6 +115,7 @@ class HomePage {
 		getGearBags:() => this.page.locator('#ui-id-25'),
 		getGearBags:() => this.page.locator('#ui-id-25'),
 		getGearFitnessEquipment:() => this.page.locator('#ui-id-26'),
+		getGearWatches:() => this.page.locator('#ui-id-27'),
 
 
 
@@ -471,6 +472,12 @@ class HomePage {
 		await this.locators.getGearFitnessEquipment().click();
 
 		return new GearFitnessEquipmentPage (this.page);
+	}
+
+	async hoverGearWatches() {
+		await this.locators.getGearWatches().hover();
+
+		return this;
 	}
 
 

@@ -1158,6 +1158,17 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.169 Verify that the dropdown contains the "Watches" subcategory', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverGearLink();
+		await homePage.hoverGearWatches();
+		await expect(homePage.locators.getGearWatches()).toBeVisible();
+
+
+	});
+
 
 
 
