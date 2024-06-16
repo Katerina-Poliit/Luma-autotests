@@ -30,6 +30,7 @@ import WomenShortsPage from "./womenShortsPage";
 import MenTopsPage from "./menTopsPage";
 import MenJacketsPage from "./menJacketsPage";
 import MenHoddiesSweatshirtsPage from "./menHoddiesSweatshirtsPage";
+import TeesPage from "./teesPage";
 
 
 class HomePage {
@@ -237,30 +238,30 @@ class HomePage {
 		await this.locators.getWomenLink().hover();
 
 		return this;
-	  }
+	}
 
 	async clickMomenCategoryTops() {
 		await this.locators.getMomenCategoryTops().click();
 
 		return new WomenTopsPage(this.page);
-	  }
+	}
 
 	async hoverMomenCategoryTops() {
 		await this.locators.getMomenCategoryTops().hover();
 
 		return this;
-	  }
+	}
 
 	async clickWomenTopsSubcategoryJackets() {
 		await this.locators.getWomenTopsSubcategoryJackets().click();
 
 		return new WomenTopsSubcategoryJacketsPage(this.page);
-	  }
+	}
 
 	async clickWomenTopsSubcategoryHoodiesSweatshirts() {
-	  	await this.locators.getWomenTopsSubcategoryHoodiesSweatshirts().click();
+		await this.locators.getWomenTopsSubcategoryHoodiesSweatshirts().click();
 
-	  	return new WomenHoodiesSweatshirtsPage(this.page);
+		return new WomenHoodiesSweatshirtsPage(this.page);
 	}
 
 	async click20OFFSection() {
@@ -274,7 +275,6 @@ class HomePage {
 
 		return new PantsPage(this.page);
 	}
-
 
 	async clickTopsSubcategoryTees() {
 		await this.locators.getTopsSubcategoryTees().click();
@@ -298,10 +298,10 @@ class HomePage {
 		await this.locators.getMomenCategoryBottoms().hover();
 
 		return this;
-	  }
+	}
 
 
-	  async clickWomenSubcategoryPants() {
+	async clickWomenSubcategoryPants() {
 		await this.locators.getWomenSubcategoryPants().click();
 
 		return new WomenPanstPage(this.page);
@@ -319,37 +319,43 @@ class HomePage {
 		await this.locators.getMenDropdown().hover();
 
 		return this;
-	  }
+	}
 
-	  async hoverMenTopsSubcategory() {
+	async hoverMenTopsSubcategory() {
 		await this.locators.getMenTopsSubcategory().hover();
 
 		return this;
-	  }
+	}
 
-	  async clickMenTopsSubcategory() {
+	async clickMenTopsSubcategory() {
 		await this.locators.getMenTopsSubcategory().click();
 
 		return new MenTopsPage(this.page);
-	  }
+	}
 
-	  async clickMenTopsJackets() {
+	async clickMenTopsJackets() {
 		await this.locators.getMenTopsJackets().click();
 
 		return new MenJacketsPage(this.page);
-	  }
+	}
 
-	  async hovertMenTopsHoodiesSweatshirts() {
+	async hovertMenTopsHoodiesSweatshirts() {
 		await this.locators.getMenTopsHoodiesSweatshirts().hover();
 
 		return this;
-	  }
+	}
 
-	  async clickMenTopsHoodiesSweatshirts() {
+	async clickMenTopsHoodiesSweatshirts() {
 		await this.locators.getMenTopsHoodiesSweatshirts().click();
 
 		return new MenHoddiesSweatshirtsPage(this.page);
-	  }
+	}
+
+	async clickEvenMoreSection() {
+		await this.locators.getEvenMoreSection().click();
+
+		return new TeesPage(this.page);
+	}
 
 
 }
