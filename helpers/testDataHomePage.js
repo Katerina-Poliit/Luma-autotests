@@ -74,3 +74,4 @@ export const HEADING_MEN_TOPS_PAGE_TEXT ='Tops'
 export const MEN_TOPS_SUBCATEGORY_JACKETS = 'Jackets';
 export const MEN_TOPS_HOODIESSWEATSHIRTS_TEXT = 'Hoodies & Sweatshirts';
 export const MEN_TOPS_TEES_TEXT = 'Tees';
+export const MEN_TOPS_SUBCATEGORY_TANKS_TEXT = 'Tanks';
