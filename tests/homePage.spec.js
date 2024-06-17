@@ -1218,7 +1218,7 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverTrainingLink();
 		const trainingVideoDownloadPage = await homePage.clicktrainingVideoDownloading();
 		await expect(page).toHaveURL(TRAINING_VIDEO_DOWNLOAD_PAGE_URL);
-		await expect(trainingVideoDownloadPage.Header).toBeVisible();
+		await expect(trainingVideoDownloadPage.Heading).toBeVisible();
 
 	});
 
