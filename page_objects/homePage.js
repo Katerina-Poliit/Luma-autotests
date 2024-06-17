@@ -39,6 +39,7 @@ import MenBottomsShortsPage from "./menBottomsShortsPage";
 import GearBagsPage from "./gearBagsPage";
 import GearFitnessEquipmentPage from "./gearFitnessEquipmentPage";
 import GearWatchesPage from "./gearWatchesPage";
+import TrainingVideoDownloadPage from "./trainingVideoDownloadPage";
 
 
 class HomePage {
@@ -119,6 +120,7 @@ class HomePage {
 		getGearFitnessEquipment:() => this.page.locator('#ui-id-26'),
 		getGearWatches:() => this.page.locator('#ui-id-27'),
 		trainingVideoDownloading:() => this.page.locator('#ui-id-28'),
+
 
 
 
@@ -501,6 +503,12 @@ class HomePage {
 		await this.locators.trainingVideoDownloading().hover();
 
 		return this;
+	}
+
+	async clicktrainingVideoDownloading() {
+		await this.locators.trainingVideoDownloading().click();
+
+		return new TrainingVideoDownloadPage(this.page);
 	}
 
 
