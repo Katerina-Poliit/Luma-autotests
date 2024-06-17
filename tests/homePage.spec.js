@@ -1189,6 +1189,16 @@ test.describe('homePage.spec', () => {
 
 	});
 
+	test('ТС 03.1.172 Verify that the "Training" navigation menu link contains the dropdown', async ({ page }) => {
+
+		const homePage = new HomePage(page);
+
+		await homePage.hoverTrainingLink();
+		await homePage.hovertrainingVideoDownloading();
+		await expect(homePage.locators.trainingVideoDownloading()).toBeVisible();
+
+	});
+
 
 
 
