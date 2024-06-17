@@ -1195,7 +1195,6 @@ test.describe('homePage.spec', () => {
 
 		await homePage.hoverTrainingLink();
 		await homePage.hovertrainingVideoDownloading();
-
 		await expect(homePage.locators.trainingVideoDownloading()).toBeVisible();
 
 	});
