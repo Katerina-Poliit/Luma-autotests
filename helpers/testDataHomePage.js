@@ -28,7 +28,8 @@ export const MEN_BOTTOMS_PANTS_PAGE_URL = 'https://magento.softwaretestingboard.
 export const MEN_SHORTS_PAGE_URL = 'https://magento.softwaretestingboard.com/men/bottoms-men/shorts-men.html';
 export const GEAR_BAGS_PAGE_URL = 'https://magento.softwaretestingboard.com/gear/bags.html';
 export const GEAR_FITNESS_PAGE_URL = 'https://magento.softwaretestingboard.com/gear/fitness-equipment.html';
-export const GEAR_WATCHES_PAGE_URL = 'https://magento.softwaretestingboard.com/gear/watches.html'
+export const GEAR_WATCHES_PAGE_URL = 'https://magento.softwaretestingboard.com/gear/watches.html';
+export const TRAINING_VIDEO_DOWNLOAD_PAGE_URL = 'https://magento.softwaretestingboard.com/training/training-video.html'
 
 
 
