@@ -1185,7 +1185,9 @@ test.describe('homePage.spec', () => {
 		await homePage.hoverGearLink();
 		const gearWatchesPage = await homePage.clickGearWatches();
 		await expect(page).toHaveURL(GEAR_WATCHES_PAGE_URL);
-		await expect(gearWatchesPage.locators.getHeader()).toBeVisible();
+		// await expect(gearWatchesPage.getHeader()).toBeVisible();
+		const header = await gearWatchesPage.getHeader();
+        await expect(header).toBeVisible();
 
 	});
 
